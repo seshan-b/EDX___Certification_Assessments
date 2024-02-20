@@ -1,5 +1,4 @@
 
 
-greeting = input("What's your name? ")
-print("hello, ", end="")
-print(greeting)
+word = (input("Type in something:  ").lower()
+print(word)

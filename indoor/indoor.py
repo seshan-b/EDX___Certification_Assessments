@@ -1,4 +1,5 @@
 
 
-greeting = str(input(x ))
-print(f"{[0]}, {[1]}")
+x = str(input())
+y = str (input())
+print(f"{x}, {y}")

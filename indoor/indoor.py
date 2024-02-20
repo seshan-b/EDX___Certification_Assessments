@@ -1,4 +1,5 @@
 
 
-x = str(input().split("," 2))
-print(x)
+name = input("What's your name? ")
+print("hello,")
+print(name)

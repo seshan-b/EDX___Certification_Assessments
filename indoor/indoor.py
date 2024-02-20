@@ -1,4 +1,4 @@
 
 
-word = (input("Type in something:  ").lower()
+word = (input("Type in something:  ")).lower()
 print(word)

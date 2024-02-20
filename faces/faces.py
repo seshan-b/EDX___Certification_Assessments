@@ -9,4 +9,6 @@ def emotion(emoji):
 
 
 
-print(emotion())
+
+
+print()

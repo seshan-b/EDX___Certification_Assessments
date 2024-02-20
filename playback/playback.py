@@ -1,2 +1,2 @@
 user_input = input("Enter anything: ")
-print(user_input.split(" "), sep="...")
+print(*user_input.split(' '), sep="...")

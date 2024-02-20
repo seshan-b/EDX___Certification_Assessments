@@ -1,14 +1,5 @@
-def emotion(emoji):
-    # Replace :) with a smiling face emoji
-    emoji = text.replace(":)", "😊")
+# Get input from the user
+user_input = input("Enter a text with emoticons: ")
 
-    # Replace :( with a sad face emoji
-    emoji = text.replace(":(", "😞")
-
-    return emoji
-
-
-
-
-
-print()
+# Use the print function with the sep argument to replace emoticons with emojis
+print(user_input.replace(":)", "😊").replace(":(", "😞"), sep="")

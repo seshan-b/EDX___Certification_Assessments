@@ -1,5 +1,5 @@
 
 
-name = input("What's your name? ")
-print("hello,")
-print(name)
+greeting = input("What's your name? ")
+print("hello, ", end="")
+print(greeting)

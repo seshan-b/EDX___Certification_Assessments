@@ -15,9 +15,12 @@ def process_greeting(greeting):
 def main():
     user_greeting = input("Enter a greeting: ")
 
+    # Display Amount
+    result = process_greeting(user_greeting)
+    print(result)
+
+
+
 
 # Run
 main()
-
-
-

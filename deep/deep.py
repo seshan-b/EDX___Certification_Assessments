@@ -10,3 +10,9 @@ def check_great_question_answer(answer):
 
 
 def main():
+
+    user_answer = input("What is the answer to the Great Question of Life, the Universe, and Everything? ")
+
+    # Check the user's answer 
+    result = check_great_question_answer(user_answer)
+    print(f"Is the answer correct? {result}")

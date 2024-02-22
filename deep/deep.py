@@ -1,7 +1,7 @@
 def check_great_question_answer(answer):
 
 
-    return_answer = answer.lower() # Convert to lower case
+    return_answer = answer.lower().strip() # Convert to lower case and remove whitespaces
 
     if return_answer == "42" or "forty-two" in return_answer or "forty two" in return_answer:
         return "Yes"

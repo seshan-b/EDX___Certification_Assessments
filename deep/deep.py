@@ -16,3 +16,7 @@ def main():
     # Check the user's answer
     result = check_great_question_answer(user_answer)
     print(f"Is the answer correct? {result}")
+
+
+# Run 
+main()

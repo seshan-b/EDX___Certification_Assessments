@@ -11,6 +11,7 @@ def perform_operations(user_input):
     x = float(x)
     y = float(y)
 
+
     match operation:
         case '+':
             return x + y
@@ -20,7 +21,6 @@ def perform_operations(user_input):
             return x * y
         case '/' if y != 0:
             return x / y
-
 
 
 def main():

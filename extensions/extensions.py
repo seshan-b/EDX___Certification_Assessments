@@ -19,7 +19,7 @@ def main():
 
         result = get_media_type(user_input)
         print(result)
-        print(user_input)
+        # print(user_input)
     else:
         print("application/octet-stream")
 

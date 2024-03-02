@@ -13,7 +13,7 @@ def get_media_type(file_name):
     # Check if the file extension is in the list of supported suffixes
     if file_extension and file_extension in suffixes:
         # Use mimetypes to guess the media type
-        media_type, _ = mimetypes.guess_type(file_name)
+        media_type = mimetypes.guess_type(file_name)
         print(media_type)
         # Return the guessed media type or a default if it couldn't be guessed
         return media_type

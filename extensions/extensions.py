@@ -18,10 +18,4 @@ if file_extension and file_extension in suffixes:
     # Use mimetypes to guess the media type
     media_type, _ = mimetypes.guess_type(file_name)
     # Print the guessed media type or a default if it couldn't be guessed
-    if media_type:
-        print(f"The media type of the file is: {media_type}")
-    else:
-        print("Unknown media type")
-else:
-    # If the file has an unsupported or no suffix, print the default media type
-    print("Unsupported file type")
+print(f"The media type of the file is: {media_type}")

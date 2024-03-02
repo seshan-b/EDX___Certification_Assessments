@@ -16,15 +16,17 @@ def get_media_type(file_name):
 
 
 def main():
-    user_input = str(input("Enter the file name: "))
-    result = get_media_type(user_input)
 
+    if '.' in user_input:
+        user_input = str(input("Enter the file name: "))
+        result = get_media_type(user_input)
 
-    # output the file media type
-    if result:
-        print(result)
+        if result:
+            print(result)
+        else:
+            print(user_input)
     else:
-        print(f"Unable to determine the media type for {user_input}")
+        print("application/octet-stream")
 
 
 main()

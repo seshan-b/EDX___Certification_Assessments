@@ -4,6 +4,7 @@ import mimetypes
 # Create a function to get the file media type
 def get_media_type(file_name):
 
+    print(file_name)
 
     file_name.strip().lower()
 

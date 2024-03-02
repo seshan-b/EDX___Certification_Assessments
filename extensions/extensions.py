@@ -12,6 +12,8 @@ def get_media_type(file_name):
 
 
 def main():
+
+    # Clean data on input
     user_input = str(input("Enter the file name: ")).strip().lower()
     if '.' in user_input:
 

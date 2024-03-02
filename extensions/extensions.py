@@ -5,7 +5,7 @@ import mimetypes
 def get_media_type(file_name):
 
     # The underscore is to get 1st part of array
-    media_type, _ = mimetypes.guess_type(file_name)
+    media_type, _ = mimetypes.guess_type(file_name)lower().trim()
     return media_type
 
 
@@ -13,7 +13,7 @@ def get_media_type(file_name):
 
 def main():
     user_input = str(input("Enter the file name: "))
-    result = get_media_type(user_input.lower())
+    result = get_media_type(user_input)
 
 
     # output the file media type

@@ -18,7 +18,7 @@ def main():
 
     # output the file media type
     if result:
-        print(f"Media type of {user_input}: {result}")
+        print(result)
     else:
         print(f"Unable to determine the media type for {user_input}")
 

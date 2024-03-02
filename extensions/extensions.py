@@ -19,7 +19,7 @@ def main():
     user_input = str(input("Enter the file name: "))
     if '.' in user_input:
 
-        result = get_media_type(user_input).strip()
+        result = get_media_type(user_input)
         print(result)
     else:
         print("application/octet-stream")

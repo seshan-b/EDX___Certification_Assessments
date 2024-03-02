@@ -34,8 +34,8 @@ def main():
         meal_type = "Dinner"
     else:
         meal_type = "No time given"
-    print(time_in_24hr)
-    print(meal_type)
 
+    print(meal_type)
+    return(time_in_24hr)
 
 main()

@@ -1,15 +1,23 @@
 import mimetypes
 
-# Get the user input
-
 
 # Create a function to get the file media type
 def get_media_type(file_name):
+
+    # The underscore is to get 1st part of array
     media_type, _ = mimetypes.guess_type(file_name)
     return media_type
 
 
 
-print(get_media_type("ima.jpg"))
+
+def main()
+    user_input =  str(input())
+
+    print(get_media_type("ima.jpg"))
 
 # output the file media type
+
+
+# Get the user input
+

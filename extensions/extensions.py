@@ -13,6 +13,6 @@ def get_media_type(file_name):
 
 
 
-print(get _media_type("image.jpg"))
+print(get _media_type('image.jpg'))
 
 # output the file media type

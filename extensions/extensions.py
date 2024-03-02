@@ -1,14 +1,11 @@
-import os
-import magic
+import mimetypes
 
 # Get the user input
 
 
 # Create a function to get the file media type
 def get_media_type(file_name):
-    file_path = os.path.abspath(file_name)
-    mime = magic.Magic()
-    media_type = mime.from_file(file_path)
+    media_type, encoding = mimetypes.guess_type(file_name)
     return media_type
 
 

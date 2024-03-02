@@ -4,7 +4,7 @@ def convert_to_24_hours(time_in_24hr):
     hours, minutes = map(int, time_in_24hr.split(':'))
     time_decimal = round(hours + minutes / 60.0, 2)
 
-    print(time_decimal)
+    # print(time_decimal)
     return time_decimal
 
 def main():

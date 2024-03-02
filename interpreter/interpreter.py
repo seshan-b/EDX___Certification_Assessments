@@ -30,6 +30,5 @@ def main():
         print(perform_operations(user_input))
         if user_input.lower() == 'exit':
             break
-        return perform_operations(user_input)
 
 main()

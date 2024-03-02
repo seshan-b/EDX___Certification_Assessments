@@ -19,6 +19,7 @@ def perform_operations(user_input):
             return x - y
         case '*':
             return x * y
+        # Avoid division by zero.
         case '/' if y != 0:
             return x / y
 

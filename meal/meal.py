@@ -3,11 +3,12 @@
 # Convert time to 24 hours
 def convert_to_24_hours(time_24hr):
 
+    # Convert time to decimal representation
+    hours, minutes = map(int, time_24hr.split(':'))
+    time_decimal = hours + minutes / 60.0
 
-    # Assuming input format like "HH:mm"
-    return time_24hr
-
-
+    print(time_decimal.rou)
+    return time_decimal
 
 time_24hr = "12:01"
 

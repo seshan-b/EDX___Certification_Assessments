@@ -24,9 +24,7 @@ def main():
         if result:
             print(result)
         else:
-            print(user_input)
-    else:
-        print("application/octet-stream")
+            print("application/octet-stream")
 
 
 main()

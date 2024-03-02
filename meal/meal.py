@@ -24,7 +24,7 @@ elif "20:00" <= time_24hr <= "21:00":
     meal = "Dinner"
 else:
     meal = "No time given"
-
+print(time_24hr)
 print(meal)
 
 

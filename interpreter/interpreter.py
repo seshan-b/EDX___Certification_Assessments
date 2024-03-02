@@ -13,11 +13,6 @@ def perform_operations(a, b):
 
 
 def main():
-    # Take user input for two numbers
-    a = float(input("Enter the first number: "))
-    b = float(input("Enter the second number: "))
-
-    print(perform_operations(a, b))
 
 
 main()

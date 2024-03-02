@@ -2,7 +2,11 @@
 
 # Create a function for adding subtracting, multiplying and dividing.
 
-def perform_operations(x, y, operation):
+def perform_operations(user_input):
+
+
+    # Split the expression into numbers and operation
+    x, op, y = user_input.split()
 
     match operation:
         case 'add':

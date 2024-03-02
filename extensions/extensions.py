@@ -17,14 +17,8 @@ def get_media_type(file_name):
         # Use mimetypes to guess the media type
         media_type, _ = mimetypes.guess_type(file_name)
         # Return the guessed media type or a default if it couldn't be guessed
-        if media_type:
-            print(media_type)
-            return media_type
-        else:
-            return 'Unknown media type'
-    else:
-        # If the file has an unsupported or no suffix, return the default media type
-        return 'Unsupported file type'
+        return media_type
+
 
 # Main function to run the program
 def main():

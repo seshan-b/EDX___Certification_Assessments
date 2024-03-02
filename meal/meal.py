@@ -10,10 +10,6 @@ def convert_to_24_hours(time_in_24hr):
     print(time_decimal)
     return time_decimal
 
-time_24hr = "12:01"
-
-result = convert_to_24_hours(time_24hr)
-
 
 
 
@@ -23,7 +19,7 @@ def main():
     # Get user input. Eg: 7:00, 8:00
     user_input = str(input("Get the time (Eg: 7:00): "))
 
-    time_in_24hr = user_input
+    time_in_24hr = convert_to_24_hours(user_input)
 
     # Check for meal times
     if "07:00" <= time_in_24hr <= "08:00":

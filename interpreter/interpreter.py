@@ -1,11 +1,10 @@
 
 
 # Create a function for adding subtracting, multiplying and dividing.
-
 def perform_operations(user_input):
 
-
     # Split the expression into numbers and operation
+    # Default splits by space
     x, operation, y = user_input.split()
 
     # Convert numbers to float

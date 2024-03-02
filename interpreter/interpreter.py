@@ -8,3 +8,15 @@ def perform_operations(a, b):
     multiplication_result = a * b
 
     return addition_result, subtraction_result, multiplication_result, division_result
+
+
+
+def main():
+    # Take user input for two numbers
+    a = float(input("Enter the first number: "))
+    b = float(input("Enter the second number: "))
+
+    return perform_operations(a, b)
+
+
+main()

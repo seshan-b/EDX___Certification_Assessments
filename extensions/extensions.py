@@ -20,11 +20,7 @@ def main():
     if '.' in user_input:
 
         result = get_media_type(user_input)
-
-        if result:
-            print(result)
-        else:
-            print(result)
+        print(result)
     else:
         print("application/octet-stream")
 

@@ -9,12 +9,12 @@ def convert(time):
 
 
 def main():
-    # Get user input. Eg: 7:00, 8:00
+    # Get user input. Eg: 07:00, 8:00
     user_input = str(input("Get the time (Eg: 7:00): "))
 
     time = convert(user_input)
 
-    # print(time_in_24hr)
+    # print(time)
 
     # Check for meal times
     if 7.0 <= time <= 8.0:

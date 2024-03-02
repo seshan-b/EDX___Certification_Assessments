@@ -6,11 +6,8 @@ def get_media_type(file_name):
     # List of supported file suffixes
     suffixes = ['.gif', '.jpg', '.jpeg', '.png', '.pdf', '.txt', '.zip']
 
-    # Check if the file name has a dot (.) and get the lowercase file extension
-    if '.' in file_name:
-        file_extension = file_name.split('.')[-1].lower()
-    else:
-        file_extension = None  # If there's no dot in the file name, set file_extension to None
+    # Lowercase
+    file_name.lower()
 
     # Check if the file extension is in the list of supported suffixes
     if file_extension and file_extension in suffixes:

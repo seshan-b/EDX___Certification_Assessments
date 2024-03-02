@@ -20,7 +20,7 @@ def main():
         meal_type = "breakfast time"
     elif 12.0 <= time_in_24hr <= 13.0:
         meal_type = "lunch time"
-    elif 20.0 <= time_in_24hr <= 21.0:
+    elif 18.0 <= time_in_24hr <= 19.0:
         meal_type = "dinner time"
     else:
         meal_type = "No time given"

@@ -19,7 +19,7 @@ def main():
 
     time_in_24hr = convert_to_24_hours(user_input)
 
-    print(time_in_24hr)
+    print(time_in_24h)
 
     # # Check for meal times
     # # Check for meal times

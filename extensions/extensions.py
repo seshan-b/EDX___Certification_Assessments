@@ -5,11 +5,11 @@ import mimetypes
 
 # Create a function to get the file media type
 def get_media_type(file_name):
-    media_type, encoding = mimetypes.guess_type(file_name)
+    media_type = mimetypes.guess_type(file_name)
     return media_type
 
 
 
-print(get_media_type("ima.jpg"))
+get_media_type("ima.jpg"))
 
 # output the file media type

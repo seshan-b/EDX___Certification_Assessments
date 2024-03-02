@@ -4,8 +4,12 @@ import mimetypes
 # Create a function to get the file media type
 def get_media_type(file_name):
 
+
+    # clean data
+    file_name.lower().strip()
+
     # The underscore is to get 1st part of array
-    media_type, _ = mimetypes.guess_type(file_name)lower().trim()
+    media_type, _ = mimetypes.guess_type(file_name)
     return media_type
 
 

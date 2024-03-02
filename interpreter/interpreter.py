@@ -3,7 +3,7 @@
 # Create a function for adding subtracting, multiplying and dividing.
 
 def perform_operations(a, b):
-    
+
     addition_result = a + b
     subtraction_result = a - b
     multiplication_result = a * b
@@ -17,7 +17,7 @@ def main():
     a = float(input("Enter the first number: "))
     b = float(input("Enter the second number: "))
 
-    return perform_operations(a, b)
+    print(perform_operations(a, b))
 
 
 main()

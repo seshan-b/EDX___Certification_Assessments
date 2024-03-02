@@ -13,8 +13,6 @@ def convert_to_24_hours(time_in_24hr):
 
 
 
-
-
 def main():
     # Get user input. Eg: 7:00, 8:00
     user_input = str(input("Get the time (Eg: 7:00): "))
@@ -22,11 +20,11 @@ def main():
     time_in_24hr = convert_to_24_hours(user_input)
 
     # Check for meal times
-    if "7.0" <= time_decimal < "8.0":
+    if "7.0" <= time_in_24hr <= "8.0":
         meal_type = "Breakfast"
-    elif "12:0" <= time_decimal  < "13:0":
+    elif "12:0" <= time_in_24hr <= "13:0":
         meal_type = "Lunch"
-    elif "20:0" <=  time_decimal < "21:0":
+    elif "20:0" <=  time_in_24hr <= "21:0":
         meal_type = "Dinner"
     else:
         meal_type = "No time given"

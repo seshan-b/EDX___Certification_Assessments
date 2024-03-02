@@ -2,6 +2,7 @@
 def convert(time):
     # Convert time to decimal representation
     hours, minutes = map(int, time.split(':'))
+    print(hours)
     time_decimal = round(hours + minutes / 60.0, 2)
 
     # print(time_decimal)

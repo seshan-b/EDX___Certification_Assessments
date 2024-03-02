@@ -15,7 +15,7 @@ def convert_to_24_hours(time_24hr):
     return time_24hr
 
 
-time_24hr = "13:00"
+time_24hr = "07:00"
 result = convert_to_24_hours(time_24hr)
 print(result)
 

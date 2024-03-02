@@ -9,8 +9,8 @@ def perform_operations(user_input):
     x, operation, y = user_input.split()
 
     # Convert numbers to float
-    num1 = float(num1)
-    num2 = float(num2)
+    x = float(x)
+    y = float(y)
 
     match operation:
         case '+':
@@ -25,9 +25,11 @@ def perform_operations(user_input):
 
 
 def main():
-     user_input = input("Enter an expression (1 + 1): ")
-     print(perform_operations(user_input))
-     return perform_operations(user_input)
-
+    while True:
+        user_input = input("Enter an expression (1 + 1): ")
+        if user_input.lower() == 'exit':
+            break
+        print(perform_operations(user_input))
+        return perform_operations(user_input)
 
 main()

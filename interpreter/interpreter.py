@@ -27,9 +27,9 @@ def perform_operations(user_input):
 def main():
     while True:
         user_input = input("Enter an expression (1 + 1): ")
+        print(perform_operations(user_input))
         if user_input.lower() == 'exit':
             break
-        print(perform_operations(user_input))
         return perform_operations(user_input)
 
 main()

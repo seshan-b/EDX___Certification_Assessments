@@ -18,6 +18,7 @@ def get_media_type(file_name):
         media_type, _ = mimetypes.guess_type(file_name)
         # Return the guessed media type or a default if it couldn't be guessed
         if media_type:
+            print(media_type)
             return media_type
         else:
             return 'Unknown media type'

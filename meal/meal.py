@@ -15,7 +15,7 @@ def convert_to_24_hours(time_in_24hr):
 
 def main():
     # Get user input. Eg: 7:00, 8:00
-    user_input = str(input("Get the time (Eg: 7:00): "))
+    user_input = input("Get the time (Eg: 7:00): ")
 
     time_in_24hr = convert_to_24_hours(user_input)
 

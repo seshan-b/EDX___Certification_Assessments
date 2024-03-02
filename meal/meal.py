@@ -13,15 +13,15 @@ def main():
 
     time_in_24hr = convert_to_24_hours(user_input)
 
-    print(time_in_24hr)
+    # print(time_in_24hr)
 
     # Check for meal times
     if 7.0 <= time_in_24hr <= 8.0:
-        meal_type = "breakfast time..."
+        meal_type = "breakfast time"
     elif 12.0 <= time_in_24hr <= 13.0:
-        meal_type = "lunch time..."
+        meal_type = "lunch time"
     elif 20.0 <= time_in_24hr <= 21.0:
-        meal_type = "dinner time..."
+        meal_type = "dinner time"
     else:
         meal_type = "No time given"
 

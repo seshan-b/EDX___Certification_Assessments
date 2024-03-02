@@ -9,6 +9,7 @@ def get_media_type(file_name):
     # Lowercase
     if '.' in file_name:
         file_extension = file_name.split('.')[-1].lower()
+        print(file_extension)
 
     get_media = mimetypes.guess_type(file_name)
 
@@ -17,7 +18,7 @@ def get_media_type(file_name):
     return get_media
 
 
-print(get_media_type("image/jpeg"))
+print(get_media_type("image.jpg"))
 
 
 # Main function to run the program

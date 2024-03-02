@@ -11,13 +11,19 @@ def get_media_type(file_name):
 
 
 
-def main()
-    user_input =  str(input())
+def main():
+    user_input = input("Enter the file name: ")
+    result = get_media_type(user_input)
 
-    print(get_media_type("ima.jpg"))
 
-# output the file media type
+    # output the file media type
+    if result:
+        print(f"Media type of {user_input}: {result}")
+    else:
+        print(f"Unable to determine the media type for {user_input}")
 
+
+main()
 
 # Get the user input
 

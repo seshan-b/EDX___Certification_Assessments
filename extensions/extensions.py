@@ -23,7 +23,7 @@ def get_media_type(file_name):
 # Main function to run the program
 def main():
     # Prompt the user for the file name
-    file_name = input("Enter the name of the file: ")
+    file_name = str(input("Enter the name of the file: "))
     print(file_name)
 
     # Get and print the media type

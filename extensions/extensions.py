@@ -18,7 +18,7 @@ def get_media_type(file_name):
     return get_media
 
 
-print(get_media_type("image.jpg"))
+print(get_media_type("image.pdf"))
 
 
 # Main function to run the program

@@ -2,13 +2,17 @@
 
 # Create a function for adding subtracting, multiplying and dividing.
 
-def perform_operations(a, b):
+def perform_operations(x, y, operation):
 
-    addition_result = a + b
-    subtraction_result = a - b
-    multiplication_result = a * b
-
-    return addition_result, subtraction_result, multiplication_result, division_result
+    match operation:
+        case 'add':
+            return x + y
+        case 'subtract':
+            return x - y
+        case 'multiply':
+            return x * y
+        case 'divide' if y != 0:
+            return x / y
 
 
 

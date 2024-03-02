@@ -26,7 +26,8 @@ def perform_operations(user_input):
 
 def main():
      user_input = input("Enter an expression (1 + 1): ")
-     return user_input
+     print(perform_operations(user_input))
+     return perform_operations(user_input)
 
 
 main()

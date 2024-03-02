@@ -6,7 +6,7 @@ def get_media_type(file_name):
 
 
     # clean data
-    file_name.lower().strip()
+    file_name.lower()
 
     # The underscore is to get 1st part of array
     media_type, _ = mimetypes.guess_type(file_name)

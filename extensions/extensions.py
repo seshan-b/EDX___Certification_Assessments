@@ -7,7 +7,7 @@ def get_media_type(file_name):
     suffixes = ['.gif', '.jpg', '.jpeg', '.png', '.pdf', '.txt', '.zip']
 
     # Lowercase
-    get_media = file_name.lower()
+    get_media = file_name.split('.')[-1].lower()
 
     get_media = mimetypes.guess_type(file_name)
 

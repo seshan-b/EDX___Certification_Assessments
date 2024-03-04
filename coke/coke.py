@@ -37,6 +37,7 @@ def main():
             print(f"Change Owed: {change}")
         else:
             print("You have reached or exceeded 50 cents. No change owed.")
+            
 
 if __name__ == "__main__":
     main()

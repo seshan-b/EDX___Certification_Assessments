@@ -15,7 +15,7 @@ def get_valid_coin():
     while True:
         coin = int(input("Insert a coin (in cents): "))
 
-        # Check if the coin is a valid denomination
+        # Check if the coin is a valid denomination the return breaks the loop
         if coin in [1, 5, 10, 25]:
             return coin
         else:

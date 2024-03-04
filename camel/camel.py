@@ -9,7 +9,7 @@ def main():
 
     process = snake_case(user_input)
 
-    print(process, end="").lower()
+    print(process.lower(), end="")
 
 
 main()

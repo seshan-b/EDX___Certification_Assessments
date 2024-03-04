@@ -31,6 +31,8 @@ def main():
         total_amount += coin
         print(f"Amount Due: {total_amount}")
 
+    print(total_amount)
+
     # Calculate and display change
     change = total_amount - 50
     if change > 0:

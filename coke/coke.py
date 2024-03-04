@@ -29,7 +29,10 @@ def main():
     while total_amount < 50:
         coin = get_valid_coin()
         total_amount += coin
-        print(f"Amount Due: {total_amount}")
+
+
+    # Calculate and display total amount after the loop completes
+    print(f"Amount Due: {total_amount}")
 
     # Calculate and display change
     change = total_amount - 50

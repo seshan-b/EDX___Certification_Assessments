@@ -22,7 +22,7 @@ def get_valid_coin():
             print("Invalid coin. Accepted denominations are 1, 5, 10, and 25 cents.")
 
 
-# The main function keeps track of the amount and checks and calculates amount
+# The main function keeps track of the amount and checks and calculates amount giving change.
 def main():
     total_amount = 0
 

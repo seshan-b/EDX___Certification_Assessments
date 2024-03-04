@@ -1,6 +1,10 @@
 def snake_case(input_string):
     # Use the replace method to replace spaces with underscores
-    result_string = input_string.replace(' ', '_').lower()
+
+    for i in result_string:
+
+        result_string = input_string.replace(' ', '_').lower()
+        print(result, end="")
     return result_string
 
 

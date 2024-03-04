@@ -1,11 +1,11 @@
 def camel_to_snake(camel_case):
     snake_case = ''
 
-    for char in camel_case:
-        if char.isupper():
-            snake_case += '_' + char.lower()
+    for each_character in camel_case:
+        if each_character.isupper():
+            snake_case += '_' + each_character.lower()
         else:
-            snake_case += char
+            snake_case += each_character
 
     return snake_case
 

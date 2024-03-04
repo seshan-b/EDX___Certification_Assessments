@@ -34,7 +34,7 @@ def main():
     # Calculate and display change
     change = total_amount - 50
     if change > 0:
-        print(f"You are owed {change} cents in change.")
+        print(f"Change Owed: {change}")
     else:
         print("You have reached or exceeded 50 cents. No change owed.")
 

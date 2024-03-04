@@ -6,3 +6,37 @@
 
 # Assume that the user will only input integers, and ignore any integer that isn’t an accepted denomination.
 
+
+
+
+# Function to get valid coin
+def get_valid_coin():
+
+    while True:
+        coin = int(input("Insert a coin (in cents): "))
+
+        # Check if the coin is a valid denomination
+        if coin in [1, 5, 10, 25]:
+            return coin
+        else:
+            print("Invalid coin. Accepted denominations are 1, 5, 10, and 25 cents.")
+
+
+# The main function keeps track of the amount and checks and calculates amount
+def main():
+    total_amount = 0
+
+    while total_amount < 50:
+        coin = get_valid_coin()
+        total_amount += coin
+        print(f"Total amount: {total_amount} cents")
+
+    # Calculate and display change
+    change = total_amount - 50
+    if change > 0:
+        print(f"You are owed {change} cents in change.")
+    else:
+        print("You have reached or exceeded 50 cents. No change owed.")
+
+if __name__ == "__main__":
+    main()

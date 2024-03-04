@@ -13,7 +13,7 @@ def camel_to_snake(camel_case):
             snake_case += each_character
 
     # Return the resulting snake_case string
-    return snake_case.strip()
+    return snake_case
 
 def main():
     # Prompt the user for input and store it in the user_input variable
@@ -23,7 +23,7 @@ def main():
     process = camel_to_snake(user_input)
 
     # Print the snake_case version of the input in lowercase without a new line
-    print(process.lower(), end="")
+    print(process, end="")
 
 # Call the main function to execute the program
 main()

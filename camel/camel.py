@@ -11,6 +11,7 @@ def camel_to_snake(camel_case):
         else:
             # If not uppercase, add the character unchanged to snake_case
             snake_case += each_character
+        print(each_character)
 
     # Return the resulting snake_case string
     return snake_case

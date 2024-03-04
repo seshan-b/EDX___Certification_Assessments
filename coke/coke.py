@@ -29,14 +29,14 @@ def main():
     while total_amount < 50:
         coin = get_valid_coin()
         total_amount += coin
-    print(f"Amount Due: {total_amount}")
+        print(f"Amount Due: {total_amount}")
 
-    # Calculate and display change
-    change = total_amount - 50
-    if change > 0:
-        print(f"Change Owed: {change}")
-    else:
-        print("You have reached or exceeded 50 cents. No change owed.")
+        # Calculate and display change
+        change = total_amount - 50
+        if change > 0:
+            print(f"Change Owed: {change}")
+        else:
+            print("You have reached or exceeded 50 cents. No change owed.")
 
 if __name__ == "__main__":
     main()

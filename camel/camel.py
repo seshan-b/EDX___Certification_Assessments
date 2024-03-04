@@ -13,7 +13,7 @@ def camel_to_snake(camel_case):
             snake_case += each_character
 
     # Return the resulting snake_case string
-    return snake_case
+    return snake_case.strip().lower()
 
 def main():
     # Prompt the user for input and store it in the user_input variable

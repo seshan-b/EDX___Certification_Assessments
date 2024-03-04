@@ -7,9 +7,9 @@ def snake_case(input_string):
 def main():
     user_input = str(input("Give a name: "))
 
-    process = snake_case(user_input, end="")
+    process = snake_case(user_input)
 
-    print(process)
+    print(process, end="")
 
 
 main()

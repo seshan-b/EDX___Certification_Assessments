@@ -23,7 +23,7 @@ def main():
     process = camel_to_snake(user_input)
 
     # Print the snake_case version of the input in lowercase without a new line
-    print(process, end="")
+    print(process)
 
 # Call the main function to execute the program
 main()

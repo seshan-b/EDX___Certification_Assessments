@@ -16,6 +16,7 @@ def coin_insertion():
     while total_amount < 50:
         coin = input("Insert coin:  ")
 
+        # stop with a keyword
         if coin.lower() == 'stop':
             break
 

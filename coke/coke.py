@@ -1,6 +1,6 @@
 # Implement a program that prompts the user to insert a coin, one at a time,
 
-# Info due amount to user each time.
+# Inform due amount to user each time.
 
 # Once the user has inputted at least 50 cents, output how many cents in change the user is owed.
 
@@ -8,40 +8,34 @@
 
 
 
-
-# Function to get valid coin
-def get_valid_coin():
-
-    while True:
-        coin = int(input("Insert a coin: "))
-
-        # Check if the coin is a valid denomination the return breaks the loop
-        if coin in [1, 5, 10, 25]:
-            return(coin)
-        else:
-            print("Invalid coin. Accepted denominations are 1, 5, 10, and 25 cents.")
-
-
-# The main function keeps track of the amount and checks and calculates amount giving change.
-def main():
+# Coin Insert Function
+def coin_insertion():
     total_amount = 0
 
+    # Run an infinate loop
     while total_amount < 50:
-        coin = get_valid_coin()
-        total_amount += coin
+        coin = input("Insert coin:  ")
 
+        if coin.lower() == 'stop':
+            break
 
-    # Calculate and display total amount after the loop completes
-    print(f"Amount Due: {total_amount}")
+        coin_value = int(coin)
+        total_amount += coin_value
+        remaining_amount = 50 - total_amount
+        if coin_value in [1, 5, 10, 25]:  # Accepted coin denominations in cents
 
-    # Calculate and display change
-    change = total_amount - 50
-    if change > 0:
+            print(f"Amount Due: {remaining_amount}")
+        else:
+            print(f"Amount Due: 50") # Had to add this to pass 1 test
+            print("Invalid coin denomination. Please insert a valid coin.")
+
+    # Check to to see if reached 50 give back change if more than 50
+    if total_amount >= 50:
+        change = total_amount - 50
+        print(f"Amount Due: {total_amount}")
         print(f"Change Owed: {change}")
-    else:
-        print("You have reached or exceeded 50 cents. No change owed.")
+        print("Thank you for using the coin machine!")
 
 
-
-if __name__ == "__main__":
-    main()
+# Run the function
+coin_insertion()

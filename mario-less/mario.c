@@ -20,14 +20,17 @@ int main(void)
         for (int space = 0; space < height - row; space++)
         {
             printf(" ");  // Print a space
+            // Print the hashes that form the pyramid
+            for (int hash = 0; hash < row; hash++)
+            {
+                printf("#");  // Print a hash
+            }
+            // Move to the next line after finishing a row
+            printf("\n");
+
         }
-        // Print the hashes that form the pyramid
-        for (int hash = 0; hash < row; hash++)
-        {
-            printf("#");  // Print a hash
-        }
-         // Move to the next line after finishing a row
-        printf("\n");
+
+
     }
 
 }

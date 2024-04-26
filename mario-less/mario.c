@@ -17,8 +17,13 @@ int main(void)
     {
         for (int space = 0; space < height - row; space++)
         {
-            
+            printf(" ");  // Print a space
         }
+        for (int hash = 0; hash < row; hash++)
+        {
+            printf("#");  // Print a hash
+        }
+        printf("\n");
     }
 
 }

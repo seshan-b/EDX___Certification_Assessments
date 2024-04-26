@@ -12,7 +12,7 @@ int main(void)
     }
     while (height < 1 || height > 8);  // Reprompt the user if they hit 0 or less than 1
 
-    printf("The entered height is %d\n", height);
+    // printf("The entered height is %d\n", height);
     // Loop through each level of the pyramid
     for (int row = 1; row <= height; row++)
     {

@@ -3,8 +3,8 @@
 
 
 // Prompt User
-void main() {
-    int height = get_int("Height: ")
+int main(void) {
+    int height = get_int("Height: ");
 
 }
 

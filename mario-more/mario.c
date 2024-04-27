@@ -26,8 +26,7 @@ int main(void)
         {
             printf("#");  // Print a hash
         }
-        // Print two spaces between the pyramids
-        printf("  ");
+        printf("  "); // Print two spaces between the pyramids
 
         // Print the hashes that form the left-aligned pyramid
         for (int hash = 0; hash < row; hash++)

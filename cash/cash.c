@@ -13,10 +13,11 @@ int main(void)
 
     // Calculate how many quarters you should give customer
     int quarters = cents / 25;
+    // Subtract the value of those quarters from cents
     cents = cents % 25;
 
 
-    // Subtract the value of those quarters from cents
+
 
     // Calculate how many dimes you should give customer
     // Subtract the value of those dimes from remaining cents

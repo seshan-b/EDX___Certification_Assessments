@@ -1,6 +1,16 @@
 #include <cs50.h>
 #include <stdio.h>
 
+
+// Function to calculate how many nickels to give the customer
+int calculate_nickels(int *remaining_cents)
+{
+    int nickels = *remaining_cents / 5;
+    *remaining_cents = *remaining_cents % 5; // Update remaining cents after using nickels
+    return nickels;
+}
+
+
 int main(void)
 {
     // Prompt the user for change owed, in cents

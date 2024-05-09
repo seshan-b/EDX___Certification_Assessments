@@ -33,10 +33,8 @@ int main(void)
     cents = cents % 10;
 
 
-    // Calculate how many nickels you should give customer
-    int nickels = cents / 5;
-    // Subtract the value of those nickels from remaining cents
-    cents = cents % 10;
+    // Calculate how many nickels you should give the customer using the new function
+    int nickels = calculate_nickels(&cents);
 
     // Calculate how many pennies you should give customer
     int pennies = cents;

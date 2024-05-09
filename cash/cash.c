@@ -17,10 +17,11 @@ int main(void)
     cents = cents % 25;
 
 
-
-
     // Calculate how many dimes you should give customer
+    int dimes = cents / 10;
     // Subtract the value of those dimes from remaining cents
+    cents = cents % 10;
+
 
     // Calculate how many nickels you should give customer
     // Subtract the value of those nickels from remaining cents

@@ -4,12 +4,6 @@
 int main(void)
 {
     // Prompt the user for change owed, in cents
-    int cents;
-    do
-    {
-        cents = get_int("Change owed: ");
-    }
-    while (cents < 0);
 
     // Calculate how many quarters you should give customer
     // Subtract the value of those quarters from cents

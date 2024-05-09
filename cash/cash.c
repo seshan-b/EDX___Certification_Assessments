@@ -33,6 +33,7 @@ int main(void)
     // Subtract the value of those pennies from remaining cents
 
     // Sum the number of quarters, dimes, nickels, and pennies used
+    int total_coins = quarters + dimes + nickels + pennies;
     // Print that sum
 
 
@@ -41,4 +42,5 @@ int main(void)
     printf("Dimes: %d\n", dimes);
     printf("Nickels: %d\n", nickels);
     printf("Remaining cents after quarters, dimes, and nickels: %d\n", cents);
+    printf("Total coins used: %d\n", total_coins);
 }

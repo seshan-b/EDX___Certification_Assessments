@@ -24,7 +24,7 @@ int main(void)
 
 
     // Calculate how many nickels you should give customer
-     int nickels = cents / 5;
+    int nickels = cents / 5;
     // Subtract the value of those nickels from remaining cents
     cents = cents % 10;
 

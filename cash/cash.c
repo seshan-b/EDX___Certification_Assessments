@@ -24,11 +24,20 @@ int main(void)
 
 
     // Calculate how many nickels you should give customer
+     int nickels = cents / 5;
     // Subtract the value of those nickels from remaining cents
+    cents = cents % 10;
 
     // Calculate how many pennies you should give customer
     // Subtract the value of those pennies from remaining cents
 
     // Sum the number of quarters, dimes, nickels, and pennies used
     // Print that sum
+
+
+    // Test Printing
+    printf("Quarters: %d\n", quarters);
+    printf("Dimes: %d\n", dimes);
+    printf("Nickels: %d\n", nickels);
+    printf("Remaining cents after quarters, dimes, and nickels: %d\n", cents);
 }

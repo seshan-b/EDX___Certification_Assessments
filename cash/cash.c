@@ -39,10 +39,11 @@ int main(void)
     // Calculate how many pennies you should give customer
     int pennies = cents;
     // Subtract the value of those pennies from remaining cents
+    // cents = 0;
 
     // Sum the number of quarters, dimes, nickels, and pennies used
     int total_coins = quarters + dimes + nickels + pennies;
-    // Print that sum
+
 
 
     // Test Printing

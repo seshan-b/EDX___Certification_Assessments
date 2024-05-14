@@ -2,8 +2,9 @@
 
 // Function Declerations
 int calculate_checksum(long long card_number);
-
-
+int get_card_length(long long card_number);
+int get_starting_digits(long long card_number, int num_digits);
+void check_card_type(long long card_number);
 // Prompt the user for input
 
 int main() {
@@ -48,5 +49,37 @@ int calculate_checksum(long long card_number) {
     return sum;
 }
 // Check Credit Card length and starting digits.
+int get_card_length(long long card_number) {
+    int length = 0;
+    while (card_number > 0) {
+        card_number /= 10;
+        length++;
+    }
+    return length;
+}
+
+int get_starting_digits(long long card_number, int num_digits) {
+    while (card_number >= 10 * num_digits) {
+        card_number /= 10;
+    }
+    return (int)card_number;
+}
+
 
 // Print AMEX, MASTERCARD, VISA or INVALID CARD
+void check_card_type(long long card_number) {
+    int length = get_card_length(card_number);
+    int starting_digits = get_starting_digits(card_number, 2);
+
+    if (length == 15 && (starting_digits == 34 || starting_digits == 37)) {
+        printf("AMEX\n");
+    } else if (length == 16 && (starting_digits >= 51 && starting_digits <= 55)) {
+        printf("MASTERCARD\n");
+    } else if ((length == 13 || length == 16) && (starting_digits / 10 == 4)) {
+        printf("VISA\n");
+    } else {
+        printf("INVALID CARD\n");
+    }
+}
+
+

@@ -14,14 +14,14 @@ int main() {
 
     // Check to see if input is or isn't 0
     if (credit_card_number == 0) {
-        printf("INVALID CARD\n");
+        printf("INVALID\n");
         return 0;
     }
 
     // Calculate checksum
     int checksum = calculate_checksum(credit_card_number);
     if (checksum % 10 != 0) {
-        printf("INVALID CARD\n");
+        printf("INVALID\n");
         return 0;
     }
 
@@ -84,6 +84,6 @@ void check_card_type(long long card_number) {
     } else if ((length == 13 || length == 16) && (starting_digits / 10 == 4)) {
         printf("VISA\n");
     } else {
-        printf("INVALID CARD\n");
+        printf("INVALID\n");
     }
 }

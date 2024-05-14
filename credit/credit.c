@@ -1,11 +1,9 @@
 #include <stdio.h>
 
-// Function Declerations
 int calculate_checksum(long long card_number);
 int get_card_length(long long card_number);
 int get_starting_digits(long long card_number, int num_digits);
 void check_card_type(long long card_number);
-// Prompt the user for input
 
 int main() {
     long long credit_card_number;
@@ -33,12 +31,7 @@ int main() {
     return 0;
 }
 
-// Calculate Checksum Check to see if input is or isn't 0
 int calculate_checksum(long long card_number) {
-    // Multiply every other digit by 2, starting with secod-to-last digit
-    // Add those products' digits together.
-    // Add the sum to sum of the digits that wern't multiplied by 2
-    // If the total's last digit is 0, number is valid!
     int sum = 0;
     int is_second = 0;
     int digit;
@@ -59,7 +52,7 @@ int calculate_checksum(long long card_number) {
 
     return sum;
 }
-// Check Credit Card length and starting digits.
+
 int get_card_length(long long card_number) {
     int length = 0;
     while (card_number > 0) {
@@ -70,17 +63,19 @@ int get_card_length(long long card_number) {
 }
 
 int get_starting_digits(long long card_number, int num_digits) {
-    while (card_number >= 10 * num_digits) {
-        card_number /= 10;
+    long long divisor = 1;
+    for (int i = 0; i < get_card_length(card_number) - num_digits; i++) {
+        divisor *= 10;
     }
-    return (int)card_number;
+    return card_number / divisor;
 }
 
-
-// Print AMEX, MASTERCARD, VISA or INVALID CARD
 void check_card_type(long long card_number) {
     int length = get_card_length(card_number);
     int starting_digits = get_starting_digits(card_number, 2);
+
+    printf("Card length: %d\n", length);
+    printf("Starting digits: %d\n", starting_digits);
 
     if (length == 15 && (starting_digits == 34 || starting_digits == 37)) {
         printf("AMEX\n");
@@ -92,5 +87,3 @@ void check_card_type(long long card_number) {
         printf("INVALID CARD\n");
     }
 }
-
-

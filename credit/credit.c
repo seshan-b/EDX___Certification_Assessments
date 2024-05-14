@@ -74,8 +74,8 @@ void check_card_type(long long card_number) {
     int length = get_card_length(card_number);
     int starting_digits = get_starting_digits(card_number, 2);
 
-    printf("Card length: %d\n", length);
-    printf("Starting digits: %d\n", starting_digits);
+    // printf("Card length: %d\n", length);
+    // printf("Starting digits: %d\n", starting_digits);
 
     if (length == 15 && (starting_digits == 34 || starting_digits == 37)) {
         printf("AMEX\n");

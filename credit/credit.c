@@ -22,6 +22,12 @@ int main() {
 }
 
 // Calculate Checksum Check to see if input is or isn't 0
+// Multiply every other digit by 2, starting with secod-to-last digit
+// Add those products' digits together.
+// Add the sum to sum of the digits that wern't multiplied by 2
+
+// If the total's last digit is 0, number is valid!
+
 int calculate_checksum(long long card_number) {
     int sum = 0;
     int digit;

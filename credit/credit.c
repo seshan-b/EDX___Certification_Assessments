@@ -108,5 +108,5 @@ int main() {
         // Check credit card length and starting digits
         check_card_type(credit_card_number);  // Call the function to check the card type
 
-        return 0;  // Exit the program successfully
+        return 0;  // Return 0
 }

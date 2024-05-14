@@ -14,10 +14,21 @@ int main() {
     printf("Enter your credit card number: ");
     scanf("%lld", &credit_card_number);
 
+    // Check to see if input is or isn't 0
     if (credit_card_number == 0) {
         printf("INVALID CARD\n");
         return 0;
     }
+
+    // Calculate checksum
+    int checksum = calculate_checksum(credit_card_number);
+    if (checksum % 10 != 0) {
+        printf("INVALID CARD\n");
+        return 0;
+    }
+
+    // Check credit card length and starting digits
+    check_card_type(credit_card_number);
 
     return 0;
 }

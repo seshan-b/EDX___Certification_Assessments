@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-// Sudo Code
-
+// Function Declerations
+int calculate_checksum(long long card_number);
 
 
 // Prompt the user for input

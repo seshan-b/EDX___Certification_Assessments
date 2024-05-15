@@ -3,6 +3,9 @@
 #include <string.h> // Include the string library to use string functions
 #include <ctype.h> // Include the ctype library to use the toupper function
 
+// Points assigned to each letter of the alphabet
+int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
 // Function prototype for computing the score of a word
 int compute_score(string word);
 
@@ -54,8 +57,16 @@ int compute_score(string word)
     // Iterate through each character in the word
     for (int i = 0, n = strlen(word); i < n; i++)
     {
-        // Convert the current character to uppercase and add its ASCII value to score
-        score += (int) toupper(word[i]);
+        // Check if the character is a letter
+        if (isalpha(word[i]))
+        {
+            // Convert the character to uppercase
+            char upper_char = toupper(word[i]);
+            // Calculate the index by subtracting 'A' from the uppercase character
+            int index = upper_char - 'A';
+            // Add the points for the character to the score
+            score += POINTS[index];
+        }
     }
     // Return the computed score
     return score;

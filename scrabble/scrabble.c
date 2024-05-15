@@ -1,9 +1,10 @@
 #include <cs50.h>  // Include the cs50 library to use the get_string function
 #include <stdio.h> // Include the standard input-output library for printf
 #include <string.h> // Include the string library to use string functions
+#include <ctype.h> // Include the ctype library to use the toupper function
 
-// Function prototype for comparing scores and printing the winner
-void print_winner(int score1, int score2);
+// Function prototype for computing the score of a word
+int compute_score(string word);
 
 int main(void)
 {
@@ -20,37 +21,14 @@ int main(void)
     printf("Second word: %s\n", word2);
 
     // Compute the score of each word
+    int score1 = compute_score(word1);
+    int score2 = compute_score(word2);
 
-    // Initialize the score for the first word to 0
-    int score1 = 0;
-    // Iterate through each character in the first word
-    for (int i = 0, n = strlen(word1); i < n; i++)
-    {
-        // Add the ASCII value of the current character to score1
-        score1 += (int) word1[i];
-    }
-    // Print the score of the first word (for debugging)
+    // Print the score of each word (for debugging)
     printf("Score of first word: %d\n", score1);
-
-    // Initialize the score for the second word to 0
-    int score2 = 0;
-    // Iterate through each character in the second word
-    for (int i = 0, n = strlen(word2); i < n; i++)
-    {
-        // Add the ASCII value of the current character to score2
-        score2 += (int) word2[i];
-    }
-    // Print the score of the second word (for debugging)
     printf("Score of second word: %d\n", score2);
 
-    // Call the function to compare scores and print the winner
-    print_winner(score1, score2);
-}
-
-// Function definition for comparing scores and printing the winner
-void print_winner(int score1, int score2)
-{
-    // Compare the scores of the two words
+    // Print the winner
     if (score1 > score2)
     {
         // If the score of the first word is greater, print that the first word is the winner
@@ -66,4 +44,19 @@ void print_winner(int score1, int score2)
         // If the scores are equal, print that it's a tie
         printf("It's a tie!\n");
     }
+}
+
+// Function definition for computing the score of a word
+int compute_score(string word)
+{
+    // Initialize the score to 0
+    int score = 0;
+    // Iterate through each character in the word
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        // Convert the current character to uppercase and add its ASCII value to score
+        score += (int) toupper(word[i]);
+    }
+    // Return the computed score
+    return score;
 }

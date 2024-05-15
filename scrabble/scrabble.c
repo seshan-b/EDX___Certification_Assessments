@@ -5,7 +5,7 @@
 
 int main(void)
 {
-
+    // Prompt the user for two words
     // Use get_string from the cs50 library to get the first word from the user
     string word1 = get_string("Enter the first word: ");
     // Print the first word to check if it was correctly inputted (for debugging)

@@ -16,4 +16,27 @@ int main(void)
     // Print the second word to check if it was correctly inputted (for debugging)
     printf("Second word: %s\n", word2);
 
+
+    // Initialize the score for the first word to 0
+    int score1 = 0;
+    // Iterate through each character in the first word
+    for (int i = 0, n = strlen(word1); i < n; i++)
+    {
+        // Add the ASCII value of the current character to score1
+        score1 += (int) word1[i];
+    }
+    // Print the score of the first word (for debugging)
+    printf("Score of first word: %d\n", score1);
+
+    // Initialize the score for the second word to 0
+    int score2 = 0;
+    // Iterate through each character in the second word
+    for (int i = 0, n = strlen(word2); i < n; i++)
+    {
+        // Add the ASCII value of the current character to score2
+        score2 += (int) word2[i];
+    }
+    // Print the score of the second word (for debugging)
+    printf("Score of second word: %d\n", score2);
+
 }

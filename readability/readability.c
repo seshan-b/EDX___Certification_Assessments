@@ -18,6 +18,7 @@ int main(void)
 
     // Prompt the user for some text
     string text = get_string("Enter some text: ");
+    int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
 

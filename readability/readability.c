@@ -11,6 +11,7 @@ int main(void)
 {
 
     // Prompt the user for some text
+    string text = get_string("Enter some text: ");
 
     // Count the number of letters, words, and sentences in the text
 

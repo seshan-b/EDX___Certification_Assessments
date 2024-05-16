@@ -32,7 +32,22 @@ int main(void)
     // Compute the index using the formula
     float index = 0.0588 * L - 0.296 * S - 15.8;
 
+     // Round the index to the nearest whole number
+    int grade = round(index);
+
     // Print the grade level
+    if (grade < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if (grade >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Grade %d\n", grade);
+    }
 
 
     // Test Printing

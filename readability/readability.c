@@ -18,11 +18,12 @@ int main(void)
 
     // Prompt the user for some text
     string text = get_string("Enter some text: ");
+
+
+    // Count the number of letters, words, and sentences in the text
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
-
-    // Count the number of letters, words, and sentences in the text
 
     // Compute the Coleman-Liau index
 

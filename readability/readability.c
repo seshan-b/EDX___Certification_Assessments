@@ -51,9 +51,9 @@ int main(void)
 
 
     // Test Printing
-    printf("Letters: %d\n", letters);
-    printf("Words: %d\n", words);
-    printf("Sentences: %d\n", sentences);
+    //printf("Letters: %d\n", letters);
+    //printf("Words: %d\n", words);
+    //printf("Sentences: %d\n", sentences);
 
 }
 

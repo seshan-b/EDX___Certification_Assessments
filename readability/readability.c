@@ -26,6 +26,11 @@ int main(void)
     int sentences = count_sentences(text);
 
     // Compute the Coleman-Liau index
+    float L = (float)letters / words * 100;
+    // S is the average number of sentences per 100 words
+    float S = (float)sentences / words * 100;
+    // Compute the index using the formula
+    float index = 0.0588 * L - 0.296 * S - 15.8;
 
     // Print the grade level
 

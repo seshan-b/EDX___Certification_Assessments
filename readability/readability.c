@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <string.h>
 
+// The Algo
+// index = 0.0588 * L - 0.296 * S - 15.8
+
 int main(void)
 {
 

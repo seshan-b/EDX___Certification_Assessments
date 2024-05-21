@@ -97,7 +97,6 @@ char* encrypt(string plaintext, string key)
     return ciphertext;
 }
 
-// Main Function
 int main(int argc, string argv[])
 {
     // Pseudocode:

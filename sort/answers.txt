@@ -1,11 +1,12 @@
-sort1 uses: TODO
+sort1 uses: Bubble Sort
 
-How do you know?: TODO
+How do you know?: Bubble sort users Big O N2 or  Big Omega N which mean if it is sorted it does not bother with it if already sorted it is much quicker to sort
 
-sort2 uses: TODO
+sort2 uses: Merge Sort
 
-How do you know?: TODO
+How do you know?: Merge Sort is quicker on both ends Big O N log N or Big Omega N log N sorts faster on both sorted lists and unsorted lists
 
-sort3 uses: TODO
 
-How do you know?: TODO
+sort3 uses: Selection Sort
+
+How do you know?: Selection Sort is much slower compared to the other 2. Big O N2 or Big Omega N2. Selection sort is more linear.

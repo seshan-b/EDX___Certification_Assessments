@@ -23,7 +23,6 @@ def is_valid_plate(plate):
     # Step 4: Check the position of numbers
     for i in range(len(plate)):
         if plate[i].isdigit():
-            number_found = "Valid"
             # Ensure all characters after the first number are also numbers
             for j in range(i, len(plate)):
                 if not plate[j].isdigit():

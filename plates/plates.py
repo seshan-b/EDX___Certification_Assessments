@@ -7,10 +7,10 @@
 # No periods, spaces, or punctuation marks are allowed.
 
 
-# function is_valid_plate(plate):
-#     // Step 1: Check the length of the plate
-#     if length(plate) < 2 or length(plate) > 6:
-#         return False
+def is_valid_plate(plate):
+    # Step 1: Check the length of the plate
+    if len(plate) < 2 or len(plate) > 6:
+        return False
 
 #     // Step 2: Check if the plate starts with at least two letters
 #     if not (plate[0].isalpha() and plate[1].isalpha()):
@@ -35,6 +35,14 @@
 #     // Step 5: If all checks are passed, return True
 #     return True
 
+def main():
+    # Example plate to test
+    plate = "ABC123"
+    # Check if the plate is valid
+    result = is_valid_plate(plate)
+    # Print the result
+    print(f"Is the plate '{plate}' valid? {result}")
 
-# function main()
-#   Run function
+# Run the main function
+if __name__ == "__main__":
+    main()

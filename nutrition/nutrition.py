@@ -16,4 +16,4 @@
 #    b. If the fruit is in the dictionary, print the fruit and its calorie count.
 #    c. If the fruit is not in the dictionary, print that the fruit is not found.
 
-# 4. Call the function
+# 4. Prompt the user with Item

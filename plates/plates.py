@@ -10,18 +10,18 @@
 def is_valid_plate(plate):
     # Step 1: Check the length of the plate
     if len(plate) < 2 or len(plate) > 6:
-        return False
+        return "Invalid"
 
     # Step 2: Check if the plate starts with at least two letters
     if not (plate[0].isalpha() and plate[1].isalpha()):
-        return False
+        return "Invalid"
 
     #Step 3: Check for allowed characters (letters and numbers only)
     for char in plate:
         if not (char.isalpha() or char.isdigit()):
-            return False
+            return "Invalid"
     # Step 4: Check the position of numbers
-    number_found = False
+    number_found = "Invalid"
     for i in range(len(plate)):
         if plate[i].isdigit():
             number_found = True

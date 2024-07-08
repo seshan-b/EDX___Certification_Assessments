@@ -20,19 +20,20 @@ def is_valid_plate(plate):
     for char in plate:
         if not (char.isalpha() or char.isdigit()):
             return False
-#     // Step 4: Check the position of numbers
-#     number_found = False
-#     for i in range(length(plate)):
-#         if plate[i].isdigit():
-#             number_found = True
-#             // Ensure all characters after the first number are also numbers
-#             for j in range(i, length(plate)):
-#                 if not plate[j].isdigit():
-#                     return False
-#             break
+    # Step 4: Check the position of numbers
+    number_found = False
+    for i in range(len(plate)):
+        if plate[i].isdigit():
+            number_found = True
+            # Ensure all characters after the first number are also numbers
+            for j in range(i, len(plate)):
+                if not plate[j].isdigit():
+                    return False
+            break
 
-#     // Step 5: If all checks are passed, return True
-#     return True
+
+    # Step 5: If all checks are passed, return True
+    return True
 
 def main():
     # Example plate to test

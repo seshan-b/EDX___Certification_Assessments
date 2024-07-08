@@ -43,10 +43,10 @@ def check_fruit_calories(fruit_calories, fruits):
         #    a. Check if the fruit is in the `fruit_calories` dictionary.
         if fruit in fruit_calories:
         #    b. If the fruit is in the dictionary, print the fruit and its calorie count.
-            print(f"fruit: {fruit}, calories: {fruit_calories[fruit]}")
+            print(fruit_calories)
         else:
         #    c. If the fruit is not in the dictionary, print that the fruit is not found.
-            print(f"fruit: {fruit} is not found")
+            print(fruit_calories)
 
 
 

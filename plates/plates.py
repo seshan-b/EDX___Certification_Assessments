@@ -28,7 +28,7 @@ def is_valid_plate(plate):
                 if not plate[j].isdigit():
                     return "Invalid"
             break
-
+        return "Valid"
 
     # Step 5: If all checks are passed, return True
     return "Valid"

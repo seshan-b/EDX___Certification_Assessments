@@ -10,7 +10,8 @@
 # 1. Initialize a dictionary called `fruit_calories` with fruit names as keys and their calorie counts as values.
 def initialize_fruit_calories():
     fruit_calories = {
-        'apple': 52,
+        'apple': 130,
+        'kiwifruit': 90,
         'banana': 89,
         'cherry': 50,
         'date': 282,

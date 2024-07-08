@@ -16,11 +16,10 @@ def is_valid_plate(plate):
     if not (plate[0].isalpha() and plate[1].isalpha()):
         return False
 
-#     // Step 3: Check for allowed characters (letters and numbers only)
-#     for char in plate:
-#         if not (char.isalpha() or char.isdigit()):
-#             return False
-
+    #Step 3: Check for allowed characters (letters and numbers only)
+    for char in plate:
+        if not (char.isalpha() or char.isdigit()):
+            return False
 #     // Step 4: Check the position of numbers
 #     number_found = False
 #     for i in range(length(plate)):

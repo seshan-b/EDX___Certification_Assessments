@@ -10,6 +10,7 @@
 def initialize_fruit_calories():
     fruit_calories = {
         'apple': 130,
+        'banana': 110,
         'avocado': 50,
         'kiwifruit': 90,
         'pear': 100,

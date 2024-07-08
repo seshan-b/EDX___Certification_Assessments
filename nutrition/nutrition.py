@@ -62,7 +62,7 @@ def main():
         if user_fruit == 'exit':
             break
         elif user_fruit in fruit_calories:
-            print(f"{user_fruit.capitalize()} has {fruit_calories[user_fruit]} calories.")
+            print(fruit_calories)
         else:
             print(f"Sorry, we don't have calorie information for {user_fruit}.")
 

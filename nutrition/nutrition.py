@@ -19,10 +19,10 @@ def initialize_fruit_calories():
 
 # 2. Create a list called `fruits` containing the names of the fruits to check.
 # 3. Loop through each fruit in the `fruits` list:
-def check_fruit_calories(fruit_calories):
-    while True:
-        # 4. Prompt the user for Item Which fruit
-        user_fruit = input("Which fruit would you like to check? (or type 'exit' to quit): ").strip().lower()
+def check_fruit_calories(fruit_calories, user_inputs):
+    for user_fruit in user_inputs:
+        # 4. Prompt the user for item which fruit
+        user_fruit = user_fruit.strip().lower()
         if user_fruit == 'exit':
             break
         #    a. Check if the fruit is in the `fruit_calories` dictionary.
@@ -36,7 +36,9 @@ def check_fruit_calories(fruit_calories):
 # Main function to initialize the dictionary and check the fruit calories
 def main():
     fruit_calories = initialize_fruit_calories()
-    check_fruit_calories(fruit_calories)
+    # Simulate user inputs for testing
+    user_inputs = ['apple', 'avocado', 'kiwifruit', 'pear', 'sweet cherries', 'exit']
+    check_fruit_calories(fruit_calories, user_inputs)
 
 if __name__ == "__main__":
     main()

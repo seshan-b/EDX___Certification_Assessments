@@ -33,8 +33,16 @@ def initialize_fruit_calories():
     }
     return fruit_calories
 
-
 # 2. Create a list called `fruits` containing the names of the fruits to check.
+def check_fruit_calories(fruit_calories, fruits):
+    
+    for fruit in fruits:
+        if fruit in fruit_calories:
+            print(f"fruit: {fruit}, calories: {fruit_calories[fruit]}")
+        else:
+            print(f"fruit: {fruit} is not found")
+
+
 
 # 3. Loop through each fruit in the `fruits` list:
 #    a. Check if the fruit is in the `fruit_calories` dictionary.

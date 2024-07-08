@@ -6,31 +6,14 @@
 # Eg: if k in d:
 
 
-
 # 1. Initialize a dictionary called `fruit_calories` with fruit names as keys and their calorie counts as values.
 def initialize_fruit_calories():
     fruit_calories = {
         'apple': 130,
+        'avocado': 50,
         'kiwifruit': 90,
-        'banana': 89,
-        'cherry': 50,
-        'date': 282,
-        'elderberry': 73,
-        'fig': 74,
-        'grape': 67,
-        'honeydew': 36,
-        'kiwi': 61,
-        'lemon': 29,
-        'mango': 60,
-        'nectarine': 44,
-        'orange': 47,
-        'papaya': 43,
-        'quince': 57,
-        'raspberry': 52,
-        'strawberry': 32,
-        'tangerine': 53,
-        'ugli fruit': 47,
-        'watermelon': 30
+        'pear': 100,
+        'sweet cherries': 100
     }
     return fruit_calories
 
@@ -51,8 +34,7 @@ def main():
     fruit_calories = initialize_fruit_calories()
 
     # Create a list of fruits
-    fruits = ['apple', 'kiwifruit', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon', 'mango',
-              'nectarine', 'orange', 'papaya', 'quince', 'raspberry', 'strawberry', 'tangerine', 'ugli fruit', 'watermelon']
+    fruits = ['apple', 'avocado', 'kiwifruit', 'pear', 'sweet cherries']
 
     check_fruit_calories(fruit_calories, fruits)
 
@@ -60,8 +42,9 @@ def main():
         user_fruit = input("Which fruit would you like to check? (or type 'exit' to quit): ").lower()
         if user_fruit == 'exit':
             break
-        elif user_fruit in fruit_calories:
-            print(f"{user_fruit.capitalize()} has {fruit_calories[user_fruit]} calories.")
+        normalized_fruit = user_fruit.strip().lower()
+        if normalized_fruit in fruit_calories:
+            print(f"{user_fruit.capitalize()} has {fruit_calories[normalized_fruit]} calories.")
         else:
             print(f"Sorry, we don't have calorie information for {user_fruit}.")
 

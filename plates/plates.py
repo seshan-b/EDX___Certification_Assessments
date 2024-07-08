@@ -24,16 +24,16 @@ def is_valid_plate(plate):
     number_found = "Invalid"
     for i in range(len(plate)):
         if plate[i].isdigit():
-            number_found = True
+            number_found = "Valid"
             # Ensure all characters after the first number are also numbers
             for j in range(i, len(plate)):
                 if not plate[j].isdigit():
-                    return False
+                    return "Invalid"
             break
 
 
     # Step 5: If all checks are passed, return True
-    return True
+    return "Valid"
 
 def main():
     # Prompt the user for input

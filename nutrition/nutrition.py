@@ -32,6 +32,7 @@ def check_fruit_calories(fruit_calories):
         else:
             #    c. If the fruit is not in the dictionary, print that the fruit is not found.
             print(f"Sorry, we don't have calorie information for {user_fruit}.")
+            break
 
 # Main function to initialize the dictionary and check the fruit calories
 def main():

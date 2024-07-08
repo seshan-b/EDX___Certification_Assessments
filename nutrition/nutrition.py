@@ -51,7 +51,7 @@ def main():
     fruit_calories = initialize_fruit_calories()
 
     # Create a list of fruits
-    fruits = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon', 'mango',
+    fruits = ['apple', 'kiwifruit', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon', 'mango',
               'nectarine', 'orange', 'papaya', 'quince', 'raspberry', 'strawberry', 'tangerine', 'ugli fruit', 'watermelon']
 
     check_fruit_calories(fruit_calories, fruits)

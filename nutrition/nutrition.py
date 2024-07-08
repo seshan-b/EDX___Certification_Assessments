@@ -66,5 +66,6 @@ def main():
         else:
             print(f"Sorry, we don't have calorie information for {user_fruit}.")
 
+
 if __name__ == "__main__":
     main()

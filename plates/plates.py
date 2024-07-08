@@ -10,26 +10,35 @@
 def is_valid_plate(plate):
     # Step 1: Check the length of the plate
     if len(plate) < 2 or len(plate) > 6:
-        return "Invalid"
+        return False
 
     # Step 2: Check if the plate starts with at least two letters
     if not (plate[0].isalpha() and plate[1].isalpha()):
-        return "Invalid"
+        return False
 
-    #Step 3: Check for allowed characters (letters and numbers only)
+    # Step 3: Check for allowed characters (letters and numbers only)
     for char in plate:
         if not (char.isalpha() or char.isdigit()):
-            return "Invalid"
+            return False
+
     # Step 4: Check the position of numbers
+    number_found = False
     for i in range(len(plate)):
         if plate[i].isdigit():
+            number_found = True
             # Ensure all characters after the first number are also numbers
             for j in range(i, len(plate)):
                 if not plate[j].isdigit():
-                    return "Invalid"
+                    return False
             break
-    # Step 5: If all checks are passed, return True
-    return "Valid"
+
+    # Additional checks for edge cases
+    # Check if the plate ends with a digit that is zero
+    if number_found and plate[-1] == '0':
+        return False
+
+    # If all checks are passed, return True
+    return True
 
 def main():
     # Prompt the user for input
@@ -37,8 +46,12 @@ def main():
     # Check if the plate is valid
     result = is_valid_plate(plate)
     # Print the result
-    print(f"{result}")
+    if result:
+        print("Valid")
+    else:
+        print("Invalid")
 
 # Run the main function
 if __name__ == "__main__":
     main()
+

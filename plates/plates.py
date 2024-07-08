@@ -21,7 +21,6 @@ def is_valid_plate(plate):
         if not (char.isalpha() or char.isdigit()):
             return "Invalid"
     # Step 4: Check the position of numbers
-    number_found = "Invalid"
     for i in range(len(plate)):
         if plate[i].isdigit():
             number_found = "Valid"

@@ -26,7 +26,7 @@ def check_fruit_calories(fruit_calories):
         # 3. Loop through each fruit in the `fruits` list:
         #    a. Check if the fruit is in the `fruit_calories` dictionary.
         if user_fruit in fruit_calories:
-            #    b. If the fruit is in the dictionary, print the fruit and its calorie count.
+            #    b. If the fruit is in the dictionary, print the fruit and its calorie count and breaks out of loop
             print(f"Calories: {fruit_calories[user_fruit]}")
             break
         else:

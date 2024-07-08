@@ -35,34 +35,32 @@ def initialize_fruit_calories():
 
 # 2. Create a list called `fruits` containing the names of the fruits to check.
 def check_fruit_calories(fruit_calories, fruits):
-# 3. Loop through each fruit in the `fruits` list:
-
-
-
+    # 3. Loop through each fruit in the `fruits` list:
     for fruit in fruits:
         #    a. Check if the fruit is in the `fruit_calories` dictionary.
         if fruit in fruit_calories:
-        #    b. If the fruit is in the dictionary, print the fruit and its calorie count.
+            #    b. If the fruit is in the dictionary, print the fruit and its calorie count.
             print(f"fruit: {fruit}, calories: {fruit_calories[fruit]}")
         else:
-        #    c. If the fruit is not in the dictionary, print that the fruit is not found.
+            #    c. If the fruit is not in the dictionary, print that the fruit is not found.
             print(f"fruit: {fruit} is not found")
-
-
-
-
 
 # 4. Prompt the user for Item Which fruit
 def main():
     fruit_calories = initialize_fruit_calories()
-    check_fruit_calories(fruit_calories)
+
+    # Create a list of fruits
+    fruits = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon', 'mango',
+              'nectarine', 'orange', 'papaya', 'quince', 'raspberry', 'strawberry', 'tangerine', 'ugli fruit', 'watermelon']
+
+    check_fruit_calories(fruit_calories, fruits)
 
     while True:
         user_fruit = input("Which fruit would you like to check? (or type 'exit' to quit): ").lower()
         if user_fruit == 'exit':
             break
         elif user_fruit in fruit_calories:
-            print(fruit_calories[user_fruit]")
+            print(f"{user_fruit.capitalize()} has {fruit_calories[user_fruit]} calories.")
         else:
             print(f"Sorry, we don't have calorie information for {user_fruit}.")
 

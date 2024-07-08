@@ -37,7 +37,7 @@ def is_valid_plate(plate):
 
 def main():
     # Example plate to test
-    plate = "ABC123"
+    plate = "CS50"
     # Check if the plate is valid
     result = is_valid_plate(plate)
     # Print the result

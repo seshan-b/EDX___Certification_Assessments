@@ -41,7 +41,7 @@ def main():
     # Check if the plate is valid
     result = is_valid_plate(plate)
     # Print the result
-    print(f"Is the plate '{plate}' valid? {result}")
+    print(f"{result}")
 
 # Run the main function
 if __name__ == "__main__":

@@ -36,8 +36,8 @@ def is_valid_plate(plate):
     return True
 
 def main():
-    # Example plate to test
-    plate = "CS50"
+    # Prompt the user for input
+    plate = input("Enter the vanity plate: ")
     # Check if the plate is valid
     result = is_valid_plate(plate)
     # Print the result

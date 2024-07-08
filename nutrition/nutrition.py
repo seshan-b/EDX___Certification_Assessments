@@ -53,3 +53,18 @@ def check_fruit_calories(fruit_calories, fruits):
 
 
 # 4. Prompt the user for Item Which fruit
+def main():
+    fruit_calories = initialize_fruit_calories()
+    check_fruit_calories(fruit_calories)
+
+    while True:
+        user_fruit = input("Which fruit would you like to check? (or type 'exit' to quit): ").lower()
+        if user_fruit == 'exit':
+            break
+        elif user_fruit in fruit_calories:
+            print(f"{user_fruit.capitalize()} has {fruit_calories[user_fruit]} calories.")
+        else:
+            print(f"Sorry, we don't have calorie information for {user_fruit}.")
+
+if __name__ == "__main__":
+    main()

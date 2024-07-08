@@ -62,10 +62,9 @@ def main():
         if user_fruit == 'exit':
             break
         elif user_fruit in fruit_calories:
-            print(fruit_calories[user_fruit])
+            print(fruit_calories[user_fruit]")
         else:
             print(f"Sorry, we don't have calorie information for {user_fruit}.")
-
 
 if __name__ == "__main__":
     main()

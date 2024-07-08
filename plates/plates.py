@@ -22,20 +22,21 @@ def is_valid_plate(plate):
             return False
 
     # Step 4: Check the position of numbers
-    number_found = False
+    number_started = False
     for i in range(len(plate)):
         if plate[i].isdigit():
-            number_found = True
+            number_started = True
+            # If the first number is '0', it's invalid
+            if i > 0 and plate[i] == '0' and plate[i-1].isalpha():
+                return False
             # Ensure all characters after the first number are also numbers
             for j in range(i, len(plate)):
                 if not plate[j].isdigit():
                     return False
             break
-
-    # Additional checks for edge cases
-    # Check if the plate ends with a digit that is zero
-    if number_found and plate[-1] == '0':
-        return False
+        elif number_started and plate[i].isalpha():
+            # Invalid if we encounter a letter after the numbers have started
+            return False
 
     # If all checks are passed, return True
     return True
@@ -54,4 +55,3 @@ def main():
 # Run the main function
 if __name__ == "__main__":
     main()
-

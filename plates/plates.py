@@ -12,9 +12,9 @@ def is_valid_plate(plate):
     if len(plate) < 2 or len(plate) > 6:
         return False
 
-#     // Step 2: Check if the plate starts with at least two letters
-#     if not (plate[0].isalpha() and plate[1].isalpha()):
-#         return False
+    # Step 2: Check if the plate starts with at least two letters
+    if not (plate[0].isalpha() and plate[1].isalpha()):
+        return False
 
 #     // Step 3: Check for allowed characters (letters and numbers only)
 #     for char in plate:

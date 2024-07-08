@@ -52,4 +52,4 @@ def check_fruit_calories(fruit_calories, fruits):
 
 
 
-# 4. Prompt the user with Item
+# 4. Prompt the user for Item Which fruit

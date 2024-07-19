@@ -21,7 +21,7 @@ while True:  # Loop until valid input is received
         # Determine the output based on the percentage
         if percentage == 75:
             print("75%")  # Print '75%' if the percentage is exactly 75%
-        elif 50 <= percentage < 75:
+        elif percentage >= 50:
             print("E")  # Print 'E' if the percentage is between 50% and less than 75%
         elif percentage >= 75:
             print("F")  # Print 'F' if the percentage is 75% or above

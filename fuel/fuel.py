@@ -32,4 +32,4 @@ while True:  # Loop until valid input is received
     except ValueError:  # Catch ValueError if conversion to integer fails or invalid input format
         print("Please enter the fraction in the correct format X/Y where both X and Y are integers. Try again.")  # Inform the user of the error
     except ZeroDivisionError:  # Catch ZeroDivisionError if division by zero occurs
-        print("Division by zero is not allowed. Please try again
+        print("Division by zero is not allowed. Please try again.")  # Inform the user of the error

@@ -5,8 +5,7 @@ while True:
         input_str = input("Enter the values in X/Y format: ")
 
         # Split the input string into X and Y parts
-        X_str = input_str.split('/')
-        Y_str = input_str.split('/')
+        X_str, Y_str = input_str.split('/')
 
         # Convert the parts into integers
         X = int(X_str)

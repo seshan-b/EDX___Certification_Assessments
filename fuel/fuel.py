@@ -1,8 +1,8 @@
 while True:  # Loop until valid input is received
     try:
-        # Prompt the user for input values of X and Y
-        X = int(input("Enter value for X: "))  # Convert input to integer
-        Y = int(input("Enter value for Y: "))  # Convert input to integer
+        # Prompt the user to enter the fraction in the format X/Y
+        fraction = input("Enter the fraction in the format X/Y: ")  # Get user input
+        X, Y = map(int, fraction.split('/'))  # Split the input and convert to integers
 
         # Check if X is greater than Y, Y is 0, or Y is 4
         if X > Y:
@@ -29,7 +29,7 @@ while True:  # Loop until valid input is received
             print(f"{round(percentage)}%")  # Print the actual percentage rounded to the nearest whole number
 
         break  # If no exception occurs and conditions are met, break out of the loop
-    except ValueError:  # Catch ValueError if conversion to integer fails
-        print("Both X and Y need to be integers. Please try again.")  # Inform the user of the error
+    except ValueError:  # Catch ValueError if conversion to integer fails or invalid input format
+        print("Please enter the fraction in the correct format X/Y where both X and Y are integers. Try again.")  # Inform the user of the error
     except ZeroDivisionError:  # Catch ZeroDivisionError if division by zero occurs
-        print("Division by zero is not allowed. Please try again.")  # Inform the user of the error
+        print("Division by zero is not allowed. Please try again

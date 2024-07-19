@@ -1,48 +1,33 @@
-class CustomInputError(Exception):
-    pass
-
-class GreaterThanYError(CustomInputError):
-    pass
-
-class YIsZeroError(CustomInputError):
-    pass
-
-class YIsFourError(CustomInputError):
-    pass
-
-while True:  # Loop until valid input is received
+while True:
     try:
-        # Prompt the user to enter the fraction in the format X/Y
-        fraction = input("Enter the fraction in the format X/Y: ")  # Get user input
-        X, Y = map(float, fraction.split('/'))  # Split the input and convert to floats
+        # Prompt the user for input in the format X/Y
+        input_str = input("Enter the values in X/Y format: ")
 
-        # Check specific conditions and raise CustomInputError if any are met
-        if X > Y:
-            raise GreaterThanYError("X should not be greater than Y.")
+        # Split the input string into X and Y
+        X_str, Y_str = input_str.split('/')
+
+        # Convert the split parts to integers
+        X = int(X_str)
+        Y = int(Y_str)
+
+        # Check if Y is zero (this will be checked for ZeroDivisionError)
         if Y == 0:
-            raise YIsZeroError("Y should not be 0.")
-        if Y == 4:
-            raise YIsFourError("Y should not be 4.")
+            raise ZeroDivisionError
 
-        # Calculate the percentage
-        percentage = (X / Y) * 100
+        # Check if X is greater than Y
+        if X > Y:
+            raise ValueError("X is greater than Y")
 
-        # Determine the output based on the percentage
-        if round(percentage) == 75:
-            print("75%")  # Print '75%' if the percentage is exactly 75%
-        elif percentage > 75:
-            print("F")  # Print 'F' if the percentage is greater than 75%
-        elif percentage >= 50:
-            print("E")  # Print 'E' if the percentage is between 50% and less than 75%
-        else:
-            print(f"{round(percentage)}%")  # Print the actual percentage rounded to the nearest whole number
+        # If all validations pass, break the loop
+        break
 
-        break  # If no exception occurs and conditions are met, break out of the loop
-    except ValueError:  # Catch ValueError if conversion to integer fails or invalid input format
-        print("Please enter the fraction in the correct format X/Y where both X and Y are integers. Try again.")
-    except YIsZeroError:
-        print("Division by zero is not allowed. Please try again.")
-    except GreaterThanYError:
-        print("X should not be greater than Y. Please try again.")
-    except YIsFourError:
-        print("Y should not be 4. Please try again.")
+    except ValueError as ve:
+        # Catch ValueError and prompt the user again
+        print(f"Invalid input: {ve}. Please enter integers where X <= Y and Y != 0.")
+
+    except ZeroDivisionError:
+        # Catch ZeroDivisionError and prompt the user again
+        print("Y cannot be zero. Please enter integers where X <= Y and Y != 0.")
+
+# If we reach here, it means valid input has been received
+print(f"Valid input received: {X}/{Y}")

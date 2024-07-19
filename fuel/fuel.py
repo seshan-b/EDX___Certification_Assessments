@@ -15,9 +15,17 @@ while True:  # Loop until valid input is received
             print("Y should not be 4. Please try again.")  # Inform the user of the error
             continue  # Continue to the next iteration of the loop to prompt the user again
 
-        # Perform a division to demonstrate catching ZeroDivisionError
-        result = X / Y  # This is where ZeroDivisionError might occur
-        print(f"The result of {X} divided by {Y} is {result}")  # Print the result if no exception occurs
+        # Calculate the percentage
+        percentage = (X / Y) * 100
+
+        # Determine the output based on the percentage
+        if percentage >= 75:
+            print("F")  # Print 'F' if the percentage is 75% or above
+        elif percentage >= 50:
+            print("E")  # Print 'E' if the percentage is between 50% and less than 75%
+        else:
+            print(f"{round(percentage)}%")  # Print the actual percentage rounded to the nearest whole number
+
         break  # If no exception occurs and conditions are met, break out of the loop
     except ValueError:  # Catch ValueError if conversion to integer fails
         print("Both X and Y need to be integers. Please try again.")  # Inform the user of the error

@@ -29,5 +29,16 @@ while True:
         # Catch ZeroDivisionError and prompt the user again
         print("Y cannot be zero. Please enter integers where X <= Y and Y != 0.")
 
-# If we reach here, it means valid input has been received
-print(f"Valid input received: {X}/{Y}")
+# Calculate the percentage
+percentage = (X / Y) * 100
+
+# Determine the output based on the percentage
+if percentage >= 99:
+    output = "F"
+elif percentage <= 1:
+    output = "E"
+else:
+    output = f"{int(round(percentage))}%"
+
+# Print the output
+print(output)

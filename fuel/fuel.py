@@ -23,8 +23,8 @@ while True:  # Loop until valid input is received
             print("75%")  # Print '75%' if the percentage is exactly 75%
         elif percentage >= 75:
             print("F")  # Print 'F' if the percentage is 75% or above
-        elif percentage >= 50:
-            print("E")  # Print 'E' if the percentage is between 50% and less than 75%
+        elif percentage >= 1:
+            print("E")  # Print 'E' if the percentage is between 1% and less than 75%
         else:
             print(f"{round(percentage)}%")  # Print the actual percentage rounded to the nearest whole number
 

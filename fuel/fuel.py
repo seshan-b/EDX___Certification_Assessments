@@ -14,7 +14,7 @@ while True:  # Loop until valid input is received
     try:
         # Prompt the user to enter the fraction in the format X/Y
         fraction = input("Enter the fraction in the format X/Y: ")  # Get user input
-        X, Y = map(int, fraction.split('/'))  # Split the input and convert to integers
+        X, Y = map(float, fraction.split('/'))  # Split the input and convert to floats
 
         # Check specific conditions and raise CustomInputError if any are met
         if X > Y:

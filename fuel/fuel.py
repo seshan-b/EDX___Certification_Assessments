@@ -28,7 +28,7 @@ while True:  # Loop until valid input is received
         percentage = (X / Y) * 100
 
         # Determine the output based on the percentage
-        if percentage == 75:
+        if round(percentage) == 75:
             print("75%")  # Print '75%' if the percentage is exactly 75%
         elif percentage > 75:
             print("F")  # Print 'F' if the percentage is greater than 75%

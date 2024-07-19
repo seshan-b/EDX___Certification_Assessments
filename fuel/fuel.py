@@ -8,8 +8,8 @@ while True:
         X_str, Y_str = input_str.split('/')
 
         # Convert the parts into integers
-        X = int(X_str)
-        Y = int(Y_str)
+        X = float(X_str)
+        Y = float(Y_str)
 
         # Check if Y is zero, which would cause an error when dividing
         if Y == 0:

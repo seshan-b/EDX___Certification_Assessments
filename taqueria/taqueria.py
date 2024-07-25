@@ -7,7 +7,7 @@
 # Assume that every item on the menu will be title-cased.
 
 
-# Define the menu with items and their respective prices
+# This dictionary stores the menu items and their prices
 menu = {
     "Baja Taco": 4.25,
     "Burrito": 7.50,
@@ -20,30 +20,29 @@ menu = {
     "Tortilla Salad": 8.00
 }
 
-# Initialize the total cost to zero
+# This variable will keep track of the total cost of all the items ordered
 total_cost = 0
 
-# Inform the user how to enter items and how to finish input
+# Print a message to tell the user how to enter items and how to finish input
 print("Enter items one per line (Press Ctrl-D to finish):")
 
 try:
-    # Start an infinite loop to continuously prompt the user for input
+    # This loop will keep asking the user for input until they press Ctrl-D
     while True:
-        # Prompt the user for input, remove leading/trailing whitespace, and convert to title case
+        # Get the user's input, remove any extra spaces, and capitalize the first letter of each word
         item = input().strip().title()
 
-        # Check if the entered item exists in the menu
+        # Check if the item is in the menu
         if item in menu:
-            # Add the price of the item to the total cost
+            # If the item is in the menu, add its price to the total cost
             total_cost += menu[item]
-            # Display the current total cost formatted to 2 decimal places
+            # Print the current total cost with a dollar sign and two decimal places
             print(f"${total_cost:.2f}")
         else:
-            # If the item does not exist in the menu, ignore the input and continue
+            # If the item is not in the menu, do nothing and continue asking for input
             pass
 except EOFError:
-    # Handle the end-of-file (Ctrl-D) to end the input loop
+    # When the user presses Ctrl-D, print a message saying the order is complete
     print("\nOrder complete.")
-    # Display the final total cost formatted to 2 decimal places
+    # Print the final total cost with a dollar sign and two decimal places
     print(f"Total cost: ${total_cost:.2f}")
-

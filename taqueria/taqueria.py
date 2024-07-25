@@ -12,15 +12,9 @@ menu = {
     "Salad": 3.99
 }
 
-total_cost = 0
+# Print the menu to verify
+print("Menu:")
+for item, price in menu.items():
+    print(f"{item}: ${price}")
 
-loop until EOF (Control-D):
-    prompt user for input
-    item = convert user input to title case
-    if item exists in menu:
-        total_cost += menu[item]
-        display "$" + total_cost
-    else:
-        ignore input and continue
 
-end loop

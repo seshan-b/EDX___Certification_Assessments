@@ -21,9 +21,10 @@ while True:
     else:
         items[item] = 1  # Add item with count 1 if it doesn't exist
 # Prepare the Output
-# Extract the items from the dictionary.
-# Convert each item to uppercase.
-# Sort the items alphabetically.
+sorted_items = sorted(items.keys())  # Sort items alphabetically
+uppercase_items = [item.upper() for item in sorted_items]  # Convert items to uppercase
 # Print the Output
+for item in uppercase_items:
+    print(f"{items[item]} {item}")
 # Loop through the sorted items.
 # For each item, print the count followed by the item name in uppercase.

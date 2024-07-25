@@ -16,13 +16,12 @@ try:
         if item == "" or item == "done":  # Check for end-of-input signal
             break
 
-        # Count Items
+except EOFError:
+            # Count Items
         if item in items:
             items[item] += 1  # Increment count if item exists
         else:
             items[item] = 1  # Add item with count 1 if it doesn't exist
-except EOFError:
-    print("\nInput ended.")
 
 # Prepare the Output
 sorted_items = sorted(items.keys())  # Sort items alphabetically

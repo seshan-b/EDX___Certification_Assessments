@@ -6,25 +6,28 @@
 # No need to pluralize the items. Treat the user’s input case-insensitively.
 
 
-# Initialize Data Structures - Create a dictionary to store the items and their counts.
+# Initialize Data Structures
 items = {}
-# Collect User Inputs - Use a loop to continuously prompt the user for an item.
-while True:
-    item = input("Enter an item (or 'done' to finish): ").strip().lower()  # Convert input to lowercase and remove surrounding whitespace
-    if item == "" or item == "done":  # Check for end-of-input signal
-        break #Break out of the loop if the end-of-input signal is received.
 
+# Collect User Inputs
+try:
+    while True:
+        item = input("Enter an item (or 'done' to finish): ").strip().lower()  # Convert input to lowercase and remove surrounding whitespace
+        if item == "" or item == "done":  # Check for end-of-input signal
+            break
 
-    # Count Items
-    if item in items:
-        items[item] += 1  # Increment count if item exists
-    else:
-        items[item] = 1  # Add item with count 1 if it doesn't exist
+        # Count Items
+        if item in items:
+            items[item] += 1  # Increment count if item exists
+        else:
+            items[item] = 1  # Add item with count 1 if it doesn't exist
+except EOFError:
+    print("\nInput ended.")
+
 # Prepare the Output
 sorted_items = sorted(items.keys())  # Sort items alphabetically
-uppercase_items = [item.upper() for item in sorted_items]  # Convert items to uppercase
+
 # Print the Output
-# Loop through the sorted items.
-# For each item, print the count followed by the item name in uppercase.
-for item in uppercase_items:
-    print(f"{items[item]} {item}")
+for item in sorted_items:  # Loop through the sorted items
+    print(f"{items[item]} {item.upper()}")  # Print the count followed by the item in uppercase
+

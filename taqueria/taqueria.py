@@ -9,11 +9,15 @@
 
 # Define the menu with items and their respective prices
 menu = {
-    "Burger": 5.99,
-    "Fries": 2.99,
-    "Soda": 1.49,
-    "Salad": 3.99,
-    "Taco"
+    "Baja Taco": 4.25,
+    "Burrito": 7.50,
+    "Bowl": 8.50,
+    "Nachos": 11.00,
+    "Quesadilla": 8.50,
+    "Super Burrito": 8.50,
+    "Super Quesadilla": 9.50,
+    "Taco": 3.00,
+    "Tortilla Salad": 8.00
 }
 
 # Initialize the total cost to zero

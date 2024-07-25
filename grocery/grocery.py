@@ -11,14 +11,13 @@
 # Convert each input to a consistent case (e.g., all lowercase).
 # Check for an end-of-input signal (simulate control-d with an empty input or a specific keyword like "done").
 # Break out of the loop if the end-of-input signal is received.
-# Step 3: Count Items
-# For each input item, check if it already exists in the dictionary:
+# Count Items For each input item, check if it already exists in the dictionary:
 # If it does, increment the count for that item.
 # If it doesn't, add the item to the dictionary with a count of 1.
-# Step 4: Prepare the Output
+# Prepare the Output
 # Extract the items from the dictionary.
 # Convert each item to uppercase.
 # Sort the items alphabetically.
-# Step 5: Print the Output
+# Print the Output
 # Loop through the sorted items.
 # For each item, print the count followed by the item name in uppercase.

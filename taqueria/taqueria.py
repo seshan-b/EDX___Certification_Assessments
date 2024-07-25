@@ -12,7 +12,8 @@ menu = {
     "Burger": 5.99,
     "Fries": 2.99,
     "Soda": 1.49,
-    "Salad": 3.99
+    "Salad": 3.99,
+    "Taco"
 }
 
 # Initialize the total cost to zero

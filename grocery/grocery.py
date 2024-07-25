@@ -24,7 +24,7 @@ while True:
 sorted_items = sorted(items.keys())  # Sort items alphabetically
 uppercase_items = [item.upper() for item in sorted_items]  # Convert items to uppercase
 # Print the Output
-for item in uppercase_items:
-    print(f"{items[item]} {item}")
 # Loop through the sorted items.
 # For each item, print the count followed by the item name in uppercase.
+for item in uppercase_items:
+    print(f"{items[item]} {item}")

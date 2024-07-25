@@ -12,7 +12,7 @@ items = {}
 # Collect User Inputs
 try:
     while True:
-        item = input("Enter an item (or 'done' to finish): ").strip().lower()  # Convert input to lowercase and remove surrounding whitespace
+        item = input().strip().lower()  # Convert input to lowercase and remove surrounding whitespace
         if item == "" or item == "done":  # Check for end-of-input signal
             break
 

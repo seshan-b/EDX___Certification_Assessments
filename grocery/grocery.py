@@ -7,13 +7,19 @@
 
 
 # Initialize Data Structures - Create a dictionary to store the items and their counts.
+items = {}
 # Collect User Inputs - Use a loop to continuously prompt the user for an item.
-# Convert each input to a consistent case (e.g., all lowercase).
-# Check for an end-of-input signal (simulate control-d with an empty input or a specific keyword like "done").
-# Break out of the loop if the end-of-input signal is received.
-# Count Items For each input item, check if it already exists in the dictionary:
-# If it does, increment the count for that item.
-# If it doesn't, add the item to the dictionary with a count of 1.
+while True:
+    item = input("Enter an item (or 'done' to finish): ").strip().lower()  # Convert input to lowercase and remove surrounding whitespace
+    if item == "" or item == "done":  # Check for end-of-input signal
+        break #Break out of the loop if the end-of-input signal is received.
+
+
+    # Count Items
+    if item in items:
+        items[item] += 1  # Increment count if item exists
+    else:
+        items[item] = 1  # Add item with count 1 if it doesn't exist
 # Prepare the Output
 # Extract the items from the dictionary.
 # Convert each item to uppercase.

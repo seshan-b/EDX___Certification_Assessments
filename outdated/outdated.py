@@ -5,14 +5,6 @@
 # Wherein the month in the latter might be any of the values in the list below
 
 
-# Step 1: Prompt the user for input
-date_string = input("Enter a date (e.g., 9/8/1636 or September 8, 1636): ").strip()
-
-# Step 2: Determine the format of date_string and extract components
-month = None
-day = None
-year = None
-
 # List of month names for conversion
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -34,40 +26,45 @@ def extract_date_components(date_string):
         return None, None, None
     return None, None, None
 
-# Extract components and validate the format
-month, day, year = extract_date_components(date_string)
+# Loop to reprompt the user until a valid date is entered
+while True:
+    # Step 1: Prompt the user for input
+    date_string = input("Enter a date (e.g., 9/8/1636 or September 8, 1636): ").strip()
 
-if month is None or day is None or year is None:
-    print("Error: Invalid date format.")
-    exit()
+    # Extract components and validate the format
+    month, day, year = extract_date_components(date_string)
 
-# Step 3: Validate the date
-is_valid = True
-error_message = ""
+    if month is None or day is None or year is None:
+        print("Error: Invalid date format. Please try again.")
+        continue
 
-# Check if month is between 1 and 12
-if month < 1 or month > 12:
-    is_valid = False
-    error_message = "Invalid month. Please enter a month between 1 and 12."
+    # Step 3: Validate the date
+    is_valid = True
+    error_message = ""
 
-# Check if day is valid for the given month
-# Days in each month (assuming non-leap year for simplicity)
-days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
-if is_valid:
-    if day < 1 or day > days_in_month[month - 1]:
+    # Check if month is between 1 and 12
+    if month < 1 or month > 12:
         is_valid = False
-        error_message = f"Invalid day for the given month. Please enter a day between 1 and {days_in_month[month - 1]}."
+        error_message = "Invalid month. Please enter a month between 1 and 12."
 
-# Check if year is a positive number
-if is_valid and year < 1:
-    is_valid = False
-    error_message = "Invalid year. Please enter a positive number for the year."
+    # Check if day is valid for the given month
+    # Days in each month (assuming non-leap year for simplicity)
+    days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-# Step 4: Format the date as YYYY-MM-DD
-if is_valid:
-    formatted_date = f"{year:04d}-{month:02d}-{day:02d}"
-    print(formatted_date)
-else:
-    print("Error:", error_message)
-    exit()
+    if is_valid:
+        if day < 1 or day > days_in_month[month - 1]:
+            is_valid = False
+            error_message = f"Invalid day for the given month. Please enter a day between 1 and {days_in_month[month - 1]}."
+
+    # Check if year is a positive number
+    if is_valid and year < 1:
+        is_valid = False
+        error_message = "Invalid year. Please enter a positive number for the year."
+
+    if is_valid:
+        # Step 4: Format the date as YYYY-MM-DD
+        formatted_date = f"{year:04d}-{month:02d}-{day:02d}"
+        print(formatted_date)
+        break
+    else:
+        print("Error:", error_message)

@@ -9,7 +9,7 @@
 
 # Step 1: Prompt the user for input
 date_string = input("Enter a date (e.g., 9/8/1636 or September 8, 1636): ").strip()
-print("You entered:", date_string)
+# print("You entered:", date_string)
 
 # Step 2: Determine the format of date_string and extract components
 month = None
@@ -84,6 +84,6 @@ if is_valid and year < 1:
 # Step 4: Format the date as YYYY-MM-DD
 if is_valid:
     formatted_date = f"{year:04d}-{month:02d}-{day:02d}"
-    print("Valid date:", formatted_date)
+    print(formatted_date)
 else:
     print("Error:", error_message)

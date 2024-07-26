@@ -21,7 +21,7 @@ def is_valid_date_format(date_string):
     # Check for numeric date format (e.g., 9/8/1636)
     if date_string.count("/") == 2:
         parts = date_string.split("/")
-        if all(part.isdigit() for part in parts) and len(parts[2]) == 4:
+        if len(parts) == 3 and all(part.isdigit() for part in parts) and len(parts[2]) == 4:
             return True
     # Check for written date format (e.g., September 8, 1636)
     elif any(month in date_string for month in months):
@@ -83,5 +83,4 @@ if is_valid:
     formatted_date = f"{year:04d}-{month:02d}-{day:02d}"
     print(formatted_date)
 else:
-    print("Error:", error_message)
     exit()

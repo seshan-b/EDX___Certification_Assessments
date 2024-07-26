@@ -34,6 +34,36 @@ else:
     # Convert month_name to month number
     month = months.index(month_name) + 1
 
+# Step 3: Validate the date
+is_valid = True
+error_message = ""
+
+# Check if month is between 1 and 12
+if month < 1 or month > 12:
+    is_valid = False
+    error_message = "Invalid month. Please enter a month between 1 and 12."
+
+# Check if day is valid for the given month
+# Days in each month (assuming non-leap year for simplicity)
+days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+if is_valid:
+    if day < 1 or day > days_in_month[month - 1]:
+        is_valid = False
+        error_message = f"Invalid day for the given month. Please enter a day between 1 and {days_in_month[month - 1]}."
+
+# Check if year is a positive number
+if is_valid and year < 1:
+    is_valid = False
+    error_message = "Invalid year. Please enter a positive number for the year."
+
+# Output validation result
+if is_valid:
+    print("Valid date:", f"{month}/{day}/{year}")
+else:
+    print("Error:", error_message)
+
+
 # Print extracted components for verification
 # print("Month:", month)
 # print("Day:", day)

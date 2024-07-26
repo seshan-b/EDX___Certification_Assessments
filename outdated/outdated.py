@@ -5,18 +5,23 @@
 # Wherein the month in the latter might be any of the values in the list below
 
 
+
 # List of month names for conversion
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 # Function to check if the date format is valid and extract components
 def extract_date_components(date_string):
+    # Check for numeric date format (e.g., 9/8/1636)
     if date_string.count("/") == 2:
         parts = date_string.split("/")
         if len(parts) == 3 and all(part.isdigit() for part in parts) and len(parts[2]) == 4:
             return int(parts[0]), int(parts[1]), int(parts[2])
         else:
             return None, None, None
+    # Check for written date format (e.g., September 8, 1636)
     elif any(month in date_string for month in months):
+        if "," not in date_string:
+            return None, None, None
         parts = date_string.replace(",", "").split()
         if len(parts) == 3 and parts[1].isdigit() and len(parts[2]) == 4 and parts[2].isdigit():
             month_name = parts[0]

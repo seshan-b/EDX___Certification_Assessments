@@ -83,4 +83,5 @@ if is_valid:
     formatted_date = f"{year:04d}-{month:02d}-{day:02d}"
     print(formatted_date)
 else:
+    print("Error:", error_message)
     exit()

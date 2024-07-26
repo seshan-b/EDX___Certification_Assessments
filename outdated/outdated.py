@@ -33,7 +33,7 @@ date_format = validate_date(date_input)
 if date_format == 'invalid':
     print("Invalid date format. Please try again.")
 else:
-    print(f"Valid date format: {date_format}")
+    print(f"{date_format}")
 
 # Step 3: Parse the date
 def parse_date(date_str, date_format):
@@ -61,4 +61,4 @@ def reformat_date(year, month, day):
 
 if date_format != 'invalid':
     formatted_date = reformat_date(year, month, day)
-    print(f"Formatted date: {formatted_date}")
+    print(f"{formatted_date}")

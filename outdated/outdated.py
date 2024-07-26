@@ -9,7 +9,6 @@
 
 # Step 1: Prompt the user for input
 date_string = input("Enter a date (e.g., 9/8/1636 or September 8, 1636): ").strip()
-# print("You entered:", date_string)
 
 # Step 2: Determine the format of date_string and extract components
 month = None

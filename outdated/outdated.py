@@ -16,44 +16,30 @@ year = None
 # List of month names for conversion
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-# Function to check if the date format is valid
-def is_valid_date_format(date_string):
-    # Check for numeric date format (e.g., 9/8/1636)
+# Function to check if the date format is valid and extract components
+def extract_date_components(date_string):
     if date_string.count("/") == 2:
         parts = date_string.split("/")
         if len(parts) == 3 and all(part.isdigit() for part in parts) and len(parts[2]) == 4:
-            return True
-    # Check for written date format (e.g., September 8, 1636)
+            return int(parts[0]), int(parts[1]), int(parts[2])
+        else:
+            return None, None, None
     elif any(month in date_string for month in months):
         parts = date_string.replace(",", "").split()
         if len(parts) == 3 and parts[1].isdigit() and len(parts[2]) == 4 and parts[2].isdigit():
-            return True
-    return False
+            month_name = parts[0]
+            if month_name in months:
+                month = months.index(month_name) + 1
+                return month, int(parts[1]), int(parts[2])
+        return None, None, None
+    return None, None, None
 
-# Validate the date format
-if not is_valid_date_format(date_string):
+# Extract components and validate the format
+month, day, year = extract_date_components(date_string)
+
+if month is None or day is None or year is None:
     print("Error: Invalid date format.")
     exit()
-
-# Check if the date_string contains slashes
-if "/" in date_string:
-    # Split by "/"
-    parts = date_string.split("/")
-    month = int(parts[0])
-    day = int(parts[1])
-    year = int(parts[2])
-else:
-    # Split by spaces and comma
-    parts = date_string.replace(",", "").split()
-    month_name = parts[0]
-    day = int(parts[1])
-    year = int(parts[2])
-    # Convert month_name to month number
-    if month_name in months:
-        month = months.index(month_name) + 1
-    else:
-        print("Error: Invalid month name.")
-        exit()
 
 # Step 3: Validate the date
 is_valid = True

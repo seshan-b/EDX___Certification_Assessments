@@ -54,7 +54,6 @@ def parse_date(date_str, date_format):
 
 if date_format != 'invalid':
     year, month, day = parse_date(date_input, date_format)
-    print(f"{year}, Month={month}, Day={day}")
 
 # Step 4: Reformat the date
 def reformat_date(year, month, day):

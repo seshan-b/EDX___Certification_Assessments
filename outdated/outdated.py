@@ -5,10 +5,11 @@
 # Wherein the month in the latter might be any of the values in the list below
 
 
-# Step 1: Prompt the user for input
-date_string = input("Enter a date (e.g., 9/8/1636 or September 8, 1636): ")
-# print("You entered:", date_string)
 
+
+# Step 1: Prompt the user for input
+date_string = input("Enter a date (e.g., 9/8/1636 or September 8, 1636): ").strip()
+print("You entered:", date_string)
 
 # Step 2: Determine the format of date_string and extract components
 month = None
@@ -17,6 +18,25 @@ year = None
 
 # List of month names for conversion
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+# Function to check if the date format is valid
+def is_valid_date_format(date_string):
+    # Check for numeric date format (e.g., 9/8/1636)
+    if date_string.count("/") == 2:
+        parts = date_string.split("/")
+        if all(part.isdigit() for part in parts) and len(parts[2]) == 4:
+            return True
+    # Check for written date format (e.g., September 8, 1636)
+    elif any(month in date_string for month in months):
+        parts = date_string.replace(",", "").split()
+        if len(parts) == 3 and parts[1].isdigit() and len(parts[2]) == 4 and parts[2].isdigit():
+            return True
+    return False
+
+# Validate the date format
+if not is_valid_date_format(date_string):
+    print("Error: Invalid date format.")
+    exit()
 
 # Check if the date_string contains slashes
 if "/" in date_string:
@@ -32,7 +52,11 @@ else:
     day = int(parts[1])
     year = int(parts[2])
     # Convert month_name to month number
-    month = months.index(month_name) + 1
+    if month_name in months:
+        month = months.index(month_name) + 1
+    else:
+        print("Error: Invalid month name.")
+        exit()
 
 # Step 3: Validate the date
 is_valid = True
@@ -57,14 +81,9 @@ if is_valid and year < 1:
     is_valid = False
     error_message = "Invalid year. Please enter a positive number for the year."
 
-# Output validation result
+# Step 4: Format the date as YYYY-MM-DD
 if is_valid:
-    print("Valid date:", f"{month}/{day}/{year}")
+    formatted_date = f"{year:04d}-{month:02d}-{day:02d}"
+    print("Valid date:", formatted_date)
 else:
     print("Error:", error_message)
-
-
-# Print extracted components for verification
-# print("Month:", month)
-# print("Day:", day)
-# print("Year:", year)

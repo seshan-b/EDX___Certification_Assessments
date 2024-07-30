@@ -212,8 +212,23 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // TODO
-    return;
+    // Base case: if loser leads back to winner, a cycle is created
+    if (loser == winner)
+    {
+        return true;
+    }
+    // Recursively check if locking this pair creates a cycle
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[loser][i])
+        {
+            if (creates_cycle(winner, i))
+            {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 // Print the winner of the election

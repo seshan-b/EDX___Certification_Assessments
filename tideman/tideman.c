@@ -24,10 +24,9 @@
 // print_winner function
 // The function should print out the name of the candidate who is the source of the graph. You may assume there will not be more than one source.
 
-
-
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -59,6 +58,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+bool creates_cycle(int winner, int loser);
 
 int main(int argc, string argv[])
 {
@@ -211,6 +211,21 @@ void sort_pairs(void)
 
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
+{
+    // Iterate over each pair in the sorted pairs array
+    for (int i = 0; i < pair_count; i++)
+    {
+        // Check if locking the current pair would create a cycle
+        if (!creates_cycle(pairs[i].winner, pairs[i].loser))
+        {
+            // If no cycle is created, lock the pair
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
+    }
+}
+
+// Helper function to check for cycles
+bool creates_cycle(int winner, int loser)
 {
     // Base case: if loser leads back to winner, a cycle is created
     if (loser == winner)

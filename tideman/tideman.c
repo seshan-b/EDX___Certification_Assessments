@@ -224,21 +224,27 @@ bool creates_cycle(int winner, int loser)
 // print_winner function prints the winner of the election
 void print_winner(void)
 {
+    // Iterate over each candidate
     for (int i = 0; i < candidate_count; i++)
     {
-        bool is_source = true;
+        bool is_source = true; // Assume candidate i is a source
+
+        // Check if candidate i is locked by any other candidate
         for (int j = 0; j < candidate_count; j++)
         {
+            // If candidate j has an edge locked over candidate i
             if (locked[j][i])
             {
-                is_source = false;
-                break;
+                is_source = false; // Candidate i is not a source
+                break; // No need to check further, break out of the loop
             }
         }
+
+        // If candidate i is a source (no one has locked an edge over them)
         if (is_source)
         {
-            printf("%s\n", candidates[i]);
-            break;
+            printf("%s\n", candidates[i]); // Print the name of the candidate
+            break; // We found the source, no need to check further, break out of the loop
         }
     }
 }

@@ -187,8 +187,26 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // TODO
-    return;
+    // Function to calculate the strength of victory for a pair
+    int strength_of_victory(pair p)
+    {
+        return preferences[p.winner][p.loser] - preferences[p.loser][p.winner];
+    }
+
+    // Simple bubble sort algorithm to sort pairs in decreasing order of strength of victory
+    for (int i = 0; i < pair_count - 1; i++)
+    {
+        for (int j = 0; j < pair_count - i - 1; j++)
+        {
+            if (strength_of_victory(pairs[j]) < strength_of_victory(pairs[j + 1]))
+            {
+                // Swap pairs[j] and pairs[j + 1]
+                pair temp = pairs[j];
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = temp;
+            }
+        }
+    }
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles

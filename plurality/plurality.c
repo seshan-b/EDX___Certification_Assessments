@@ -96,22 +96,30 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
+    // Initialize max_votes to 0
+    // This variable will store the highest number of votes any candidate has received
     int max_votes = 0;
 
     // Determine the maximum number of votes
+    // Loop through all the candidates to find out the highest vote count
     for (int i = 0; i < candidate_count; i++)
     {
+        // Check if the current candidate's votes are greater than max_votes
         if (candidates[i].votes > max_votes)
         {
+            // Update max_votes to the current candidate's votes
             max_votes = candidates[i].votes;
         }
     }
 
     // Print the name(s) of candidate(s) with the maximum number of votes
+    // Loop through the candidates again to print those who have max_votes
     for (int i = 0; i < candidate_count; i++)
     {
+        // Check if the current candidate's votes are equal to max_votes
         if (candidates[i].votes == max_votes)
         {
+            // Print the candidate's name
             printf("%s\n", candidates[i].name);
         }
     }

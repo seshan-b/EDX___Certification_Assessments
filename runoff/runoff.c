@@ -44,6 +44,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <limits.h>  // Include this for INT_MAX
+#include <string.h>  // Include this for strcmp
 
 // Max voters and candidates
 #define MAX_VOTERS 100

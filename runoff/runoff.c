@@ -1,3 +1,7 @@
+////// Breaking down the problem
+
+
+
 #include <cs50.h>
 #include <stdio.h>
 

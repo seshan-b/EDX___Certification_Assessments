@@ -126,8 +126,18 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    // TODO
-    return false;
+    // Iterate over all candidates to find a match for the given name
+    for (int i = 0; i < candidate_count; i++)
+    {
+        // Check if the current candidate's name matches the given name
+        if (strcmp(candidates[i], name) == 0)
+        {
+            // If a match is found, update the ranks array
+            ranks[rank] = i;
+            return true; // Successfully recorded the vote
+        }
+    }
+    return false; // No match found, vote is invalid
 }
 
 // Update preferences given one voter's ranks

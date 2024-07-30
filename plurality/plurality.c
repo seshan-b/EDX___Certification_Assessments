@@ -81,11 +81,15 @@ bool vote(string name)
         // Check if the candidate name matches the given name
         if (strcmp(candidates[i].name, name) == 0)
         {
-            // TODO: If a match is found, update the vote count
+            // If a match is found, update the vote count
+            candidates[i].votes++;
+
+            // Return true indicating the vote was successful
+            return true;
         }
     }
 
-    // TODO: If no candidate is found, return false
+    // If no candidate is found, return false
     return false;
 }
 

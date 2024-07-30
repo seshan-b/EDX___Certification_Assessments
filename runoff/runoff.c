@@ -219,7 +219,7 @@ void tabulate(void)
 bool print_winner(void)
 {
     // Calculate the majority threshold
-    int majority = voter_count / 2;
+     int majority = (voter_count / 2) + 1;
 
     // Loop through all candidates
     for (int i = 0; i < candidate_count; i++)

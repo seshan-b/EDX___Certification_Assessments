@@ -1,6 +1,15 @@
 ////// Breaking down the problem
+// "vote" Function
+// The function takes three arguments: voter, rank, and name.
+// If name is a match for the name of a valid candidate, then you should update the global preferences array to indicate that the voter voter has that candidate as their rank preference. Keep in mind 0 is the first preference, 1 is the second preference, etc. You may assume that no two candidates will have the same name.
+// If the preference is successfully recorded, the function should return true. The function should return false otherwise. Consider, for instance, when name is not the name of one of the candidates.
+// Consider these hints:
+// Recall that candidate_count stores the number of candidates in the election.
+// Recall that you can use strcmp to compare two strings.
+// Recall that preferences[i][j] stores the index of the candidate who is the jth ranked preference for the ith voter.
 
 
+//
 
 #include <cs50.h>
 #include <stdio.h>

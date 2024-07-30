@@ -169,7 +169,19 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
-    // TODO
+    // Loop through all candidates
+    for (int i = 0; i < candidate_count; i++)
+    {
+        // Compare the given name with the candidate's name
+        if (strcmp(name, candidates[i].name) == 0)
+        {
+            // Update the preferences array
+            preferences[voter][rank] = i;
+            // Return true to indicate a successful vote
+            return true;
+        }
+    }
+    // If no match found, return false
     return false;
 }
 

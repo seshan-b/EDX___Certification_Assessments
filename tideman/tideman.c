@@ -234,6 +234,26 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
-    return;
+    // Iterate over each candidate
+    for (int i = 0; i < candidate_count; i++)
+    {
+        bool is_source = true;
+
+        // Check if candidate i is not locked by any other candidate
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (locked[j][i])
+            {
+                is_source = false;
+                break;
+            }
+        }
+
+        // If candidate i is the source, print their name and break the loop
+        if (is_source)
+        {
+            printf("%s\n", candidates[i]);
+            break;
+        }
+    }
 }

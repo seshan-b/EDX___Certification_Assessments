@@ -75,7 +75,17 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    // TODO
+    // Loop through the array of candidates
+    for (int i = 0; i < candidate_count; i++)
+    {
+        // Check if the candidate name matches the given name
+        if (strcmp(candidates[i].name, name) == 0)
+        {
+            // TODO: If a match is found, update the vote count
+        }
+    }
+
+    // TODO: If no candidate is found, return false
     return false;
 }
 

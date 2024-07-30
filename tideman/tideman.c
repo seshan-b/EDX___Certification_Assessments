@@ -59,6 +59,7 @@ void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
 bool creates_cycle(int winner, int loser);
+int strength_of_victory(pair p);
 
 int main(int argc, string argv[])
 {
@@ -184,15 +185,15 @@ void add_pairs(void)
     }
 }
 
+// Function to calculate the strength of victory for a pair
+int strength_of_victory(pair p)
+{
+    return preferences[p.winner][p.loser] - preferences[p.loser][p.winner];
+}
+
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // Function to calculate the strength of victory for a pair
-    int strength_of_victory(pair p)
-    {
-        return preferences[p.winner][p.loser] - preferences[p.loser][p.winner];
-    }
-
     // Simple bubble sort algorithm to sort pairs in decreasing order of strength of victory
     for (int i = 0; i < pair_count - 1; i++)
     {

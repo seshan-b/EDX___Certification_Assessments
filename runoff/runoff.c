@@ -43,6 +43,7 @@
 
 #include <cs50.h>
 #include <stdio.h>
+#include <limits.h>  // Include this for INT_MAX
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -239,8 +240,25 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
-    // TODO
-    return 0;
+    // Initialize min_votes to a large number
+    int min_votes = INT_MAX;
+
+    // Loop through all candidates
+    for (int i = 0; i < candidate_count; i++)
+    {
+        // Check if the candidate is still in the election
+        if (!candidates[i].eliminated)
+        {
+            // If the candidate's votes are less than min_votes, update min_votes
+            if (candidates[i].votes < min_votes)
+            {
+                min_votes = candidates[i].votes;
+            }
+        }
+    }
+
+    // Return the minimum votes
+    return min_votes;
 }
 
 // Return true if the election is tied between all candidates, false otherwise

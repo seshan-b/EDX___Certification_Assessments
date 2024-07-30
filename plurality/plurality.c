@@ -1,4 +1,5 @@
 // Breaking down the problem
+// Vote Function
 // Look for a Candidate called name.
 // If Candidate found, update their vote total and return true.
 // If no candidate found don't update any vote totals and return false

@@ -1,4 +1,4 @@
-// Breaking down the problem
+////// Breaking down the problem
 // "vote" Function
 // Look for a Candidate called name.
 // If Candidate found, update their vote total and return true.
@@ -76,20 +76,26 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // Loop through the array of candidates
+    // Iterate over each candidate to find a match with the given name
     for (int i = 0; i < candidate_count; i++)
     {
         // Check if the candidate name matches the given name
+        // Use strcmp to compare the candidate's name with the provided name
+        // strcmp returns 0 if the two strings are identical
         if (strcmp(candidates[i].name, name) == 0)
         {
             // If a match is found, update the vote count
+            // Increment the votes count for the matched candidate by 1
             candidates[i].votes++;
 
             // Return true indicating the vote was successful
+            // Since we found the candidate and updated the vote, return true
             return true;
         }
     }
 
     // If no candidate is found, return false
+    // After checking all candidates, if no match is found, return false
     return false;
 }
 

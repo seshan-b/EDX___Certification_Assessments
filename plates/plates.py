@@ -1,3 +1,4 @@
+# ### 1st go at the code
 # ### Breaking down the problem
 # # All vanity plates must start with at least two letters.
 # # Vanity plates may contain a maximum of 6 characters (letters or numbers) and a minimum of 2 characters.
@@ -57,9 +58,9 @@
 #     main()
 
 
-#########################################################################################
+########################################################################################################
 
-### Second Attempt at this.
+# ### Refined version
 ### Breaking down the problem
 # All vanity plates must start with at least two letters.
 # Vanity plates may contain a maximum of 6 characters (letters or numbers) and a minimum of 2 characters.

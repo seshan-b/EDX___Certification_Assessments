@@ -4,8 +4,13 @@
 # Convert any codes (or aliases) therein to their corresponding emoji.
 
 
+import emoji
+
 # Prompt the user for a string
 user_input = input("Please enter a string: ")
 
-# Display the entered string (optional, for confirmation)
-print(f"You entered: {user_input}")
+# Convert the aliases in the string to their corresponding emojis
+emojized_string = emoji.emojize(user_input, use_aliases=True)
+
+# Output the emojized version of the string
+print(f"Emojized version: {emojized_string}")

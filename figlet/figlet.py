@@ -19,14 +19,16 @@ args = sys.argv[1:]
 # Determine the font to use
 if len(args) == 0:
     font = random.choice(pyfiglet.FigletFont.getFonts())
-elif len(args) == 2 and args[0] in ['-f', '--font']:
+elif len(args) == 2 and args[0] in ["-f", "--font"]:
     font = args[1]
     # The program should exit via sys.exit with an error message
     # if the first argument is not -f or --font or the second is not the name of a font.
     if font not in pyfiglet.FigletFont.getFonts():
         sys.exit(f"Error: '{font}' is not a valid font name.")
 else:
-    sys.exit("Error: Program expects either zero or two arguments with the first being '-f' or '--font'.")
+    sys.exit(
+        "Error: Program expects either zero or two arguments with the first being '-f' or '--font'."
+    )
 
 # Prompts the user for a str of text.
 text = input("Enter the text you want to display: ")

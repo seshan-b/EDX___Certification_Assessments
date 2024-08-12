@@ -9,7 +9,7 @@ import emoji
 user_input = input("Please enter a string: ")
 
 # Convert the aliases in the string to their corresponding emojis
-emojized_string = emoji.emojize(user_input, language='alias')
+emojized_string = emoji.emojize(user_input, language="alias")
 
 # Output the emojized version of the string
 print(f"Actual Emoji: {emojized_string}")

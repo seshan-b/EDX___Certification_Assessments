@@ -8,6 +8,7 @@
 
 import sys
 import random
+import pyfiglet
 
 def main():
     # Step 1: Parse Command-Line Arguments
@@ -34,17 +35,19 @@ def main():
     output_text_in_font(text, font)
 
 def get_random_font():
-    # Placeholder: replace with actual logic to select a random font
-    fonts = ["Arial", "Courier", "Comic Sans MS", "Times New Roman", "Verdana"]
+    # Get a list of available fonts from pyfiglet
+    fonts = pyfiglet.FigletFont.getFonts()
     return random.choice(fonts)
 
 def validate_font(font_name):
-    # Placeholder: replace with actual validation logic
-    valid_fonts = ["Arial", "Courier", "Comic Sans MS", "Times New Roman", "Verdana"]
-    return font_name in valid_fonts
+    # Validate if the font is available in pyfiglet
+    return font_name in pyfiglet.FigletFont.getFonts()
 
 def output_text_in_font(text, font):
-    print(f"Outputting text in {font} font: {text}")
+    # Use pyfiglet to render the text in the specified font
+    figlet = pyfiglet.Figlet(font=font)
+    rendered_text = figlet.renderText(text)
+    print(rendered_text)
 
 if __name__ == "__main__":
     main()

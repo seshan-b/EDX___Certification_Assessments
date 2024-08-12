@@ -12,4 +12,4 @@ user_input = input("Please enter a string: ")
 emojized_string = emoji.emojize(user_input, language='alias')
 
 # Output the emojized version of the string
-print(f"Emojized version: {emojized_string}")
+print(f"Actual Emoji: {emojized_string}")

@@ -3,7 +3,6 @@
 # Output the "emojized" version of that string
 # Convert any codes (or aliases) therein to their corresponding emoji.
 
-
 import emoji
 
 # Prompt the user for a string

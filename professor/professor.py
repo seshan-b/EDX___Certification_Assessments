@@ -12,7 +12,50 @@ import random
 
 
 def main():
-    ...
+    """
+    Main function to run the math quiz.
+    Prompts the user for a level, generates 10 math problems, and calculates the score.
+    """
+    # Step 1: Get the level from the user
+    level = get_level()
+
+    # Step 2: Initialize the score counter
+    score = 0
+
+    # Step 3: Generate and solve 10 problems
+    for _ in range(10):
+        # Generate two random integers based on the level
+        x = generate_integer(level)
+        y = generate_integer(level)
+
+        # Calculate the correct answer
+        correct_answer = x + y
+
+        # Attempt counter
+        attempts = 0
+
+        while attempts < 3:
+            try:
+                # Prompt the user for an answer
+                user_answer = int(input(f"{x} + {y} = "))
+
+                # Check if the user's answer is correct
+                if user_answer == correct_answer:
+                    score += 1  # Increment score if correct
+                    break  # Exit the loop if the answer is correct
+                else:
+                    print("EEE")  # Incorrect answer, print "EEE"
+            except ValueError:
+                print("EEE")  # If input is not an integer, print "EEE"
+
+            attempts += 1  # Increment the attempt counter
+
+        # If the user failed to answer correctly after 3 attempts
+        if attempts == 3:
+            print(f"The correct answer is {correct_answer}.")
+
+    # Step 4: Display the final score
+    print(f"Your score: {score}/10")
 
 
 def get_level():

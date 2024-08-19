@@ -7,3 +7,16 @@
 # Catch the exceptions in a try statement
 # Outputs the current cost of Bitcoins in USD to four decimal places, using as a thousands separator.
 # Print format print(f"${amount:,.4f}")
+
+
+import sys  # Import the sys module
+
+# Get the command-line argument which represents the number of Bitcoins.
+if len(sys.argv) != 2:  # Check if the user provided exactly one argument.
+    sys.exit("Usage: python bitcoin.py <number_of_bitcoins>")  # Exit with an error message if not.
+
+# Try to convert the command-line argument to a float.
+try:
+    number_of_bitcoins = float(sys.argv[1])  # Attempt to convert the input to a float.
+except ValueError:  # If conversion fails, catch the ValueError exception.
+    sys.exit("Error: The input must be a numeric value.")  # Exit with an error message.

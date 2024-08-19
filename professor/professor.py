@@ -52,7 +52,7 @@ def main():
 
         # If the user failed to answer correctly after 3 attempts
         if attempts == 3:
-            print(f"The correct answer is {correct_answer}.")
+            print(correct_answer)
 
     # Step 4: Display the final score
     print(f"Your score: {score}/10")

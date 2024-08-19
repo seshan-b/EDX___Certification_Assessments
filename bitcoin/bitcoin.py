@@ -6,3 +6,4 @@
 # Bitcoin as a float Catch any exceptions
 # Catch the exceptions in a try statement
 # Outputs the current cost of Bitcoins in USD to four decimal places, using as a thousands separator.
+# Print format print(f"${amount:,.4f}")

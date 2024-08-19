@@ -8,6 +8,7 @@
 # Outputs the current cost of Bitcoins in USD to four decimal places, using as a thousands separator.
 # Print format print(f"${amount:,.4f}")
 
+
 import sys  # For handling command-line arguments and exiting the program.
 import requests  # For making the HTTP request to the API.
 

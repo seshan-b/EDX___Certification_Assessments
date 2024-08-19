@@ -52,10 +52,10 @@ def main():
 
         # If the user failed to answer correctly after 3 attempts
         if attempts == 3:
-            print(correct_answer)
+            print(f"{x} + {y} = {correct_answer}")
 
     # Step 4: Display the final score
-    print(f"Your score: {score}/10")
+    print(f"Score: {score}")
 
 
 def get_level():

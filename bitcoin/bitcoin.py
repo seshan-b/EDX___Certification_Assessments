@@ -8,49 +8,44 @@
 # Outputs the current cost of Bitcoins in USD to four decimal places, using as a thousands separator.
 # Print format print(f"${amount:,.4f}")
 
+import sys  # For handling command-line arguments and exiting the program.
+import requests  # For making the HTTP request to the API.
 
-import sys  # Import the sys module
-import requests  # Import the requests module to make the HTTP request.
+# Ensure exactly one command-line argument is provided.
+if len(sys.argv) != 2:
+    sys.exit("Usage: python bitcoin.py <number_of_bitcoins>")
 
-
-# Get the command-line argument which represents the number of Bitcoins.
-if len(sys.argv) != 2:  # Check if the user provided exactly one argument.
-    sys.exit("Usage: python bitcoin.py <number_of_bitcoins>")  # Exit with an error message if not.
-
-# Try to convert the command-line argument to a float.
+# Try to convert the argument to a float, exit with an error if it fails.
 try:
-    number_of_bitcoins = float(sys.argv[1])  # Attempt to convert the input to a float.
-except ValueError:  # If conversion fails, catch the ValueError exception.
-    sys.exit("Error: The input must be a numeric value.")  # Exit with an error message.
+    number_of_bitcoins = float(sys.argv[1])
+except ValueError:
+    sys.exit("Error: The input must be a numeric value.")
 
-
-# Make a GET request to the CoinDesk API.
+# Request the current Bitcoin price from the CoinDesk API.
 try:
-    response = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")  # Perform the GET request.
-    response.raise_for_status()  # Check if the request was successful (status code 200).
-except requests.RequestException as e:  # Catch any request-related exceptions.
-    sys.exit(f"Error: Failed to fetch data from CoinDesk API. {e}")  # Exit with an error message.
+    response = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
+    response.raise_for_status()
+except requests.RequestException as e:
+    sys.exit(f"Error: Failed to fetch data from CoinDesk API. {e}")
 
-# Parse the JSON response to extract the current Bitcoin price.
+# Extract the current price from the JSON response.
 try:
-    data = response.json()  # Parse the JSON data from the response.
-    # Navigate through the nested JSON to get the current price in USD.
+    data = response.json()
     current_price = float(data["bpi"]["USD"]["rate_float"])
-except (KeyError, TypeError, ValueError) as e:  # Catch exceptions related to JSON parsing or missing data.
-    sys.exit(f"Error: Failed to parse the Bitcoin price from the response. {e}")  # Exit with an error message.
+except (KeyError, TypeError, ValueError) as e:
+    sys.exit(f"Error: Failed to parse the Bitcoin price from the response. {e}")
 
-
-# Perform the calculation to determine the total cost.
+# Calculate the total cost.
 try:
-    total_cost = number_of_bitcoins * current_price  # Calculate the total cost.
-except Exception as e:  # Catch any general exceptions that might occur during the calculation.
-    sys.exit(f"Error: An unexpected error occurred during the calculation. {e}")  # Exit with an error message.
+    total_cost = number_of_bitcoins * current_price
+except Exception as e:
+    sys.exit(f"Error: An unexpected error occurred during the calculation. {e}")
 
-# Format the result to four decimal places with a thousands separator.
+# Format the cost to four decimal places with a thousands separator.
 try:
-    formatted_cost = f"${total_cost:,.4f}"  # Format the total cost to four decimal places and add thousands separators.
-except Exception as e:  # Catch any exceptions related to string formatting.
-    sys.exit(f"Error: An unexpected error occurred while formatting the output. {e}")  # Exit with an error message.
+    formatted_cost = f"${total_cost:,.4f}"
+except Exception as e:
+    sys.exit(f"Error: An unexpected error occurred while formatting the output. {e}")
 
-# Output the formatted result to the user.
-print(formatted_cost)  # Display the formatted total cost.
+# Print the formatted total cost.
+print(formatted_cost)

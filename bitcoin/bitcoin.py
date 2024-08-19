@@ -10,6 +10,8 @@
 
 
 import sys  # Import the sys module
+import requests  # Import the requests module to make the HTTP request.
+
 
 # Get the command-line argument which represents the number of Bitcoins.
 if len(sys.argv) != 2:  # Check if the user provided exactly one argument.
@@ -20,3 +22,19 @@ try:
     number_of_bitcoins = float(sys.argv[1])  # Attempt to convert the input to a float.
 except ValueError:  # If conversion fails, catch the ValueError exception.
     sys.exit("Error: The input must be a numeric value.")  # Exit with an error message.
+
+
+# Make a GET request to the CoinDesk API.
+try:
+    response = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")  # Perform the GET request.
+    response.raise_for_status()  # Check if the request was successful (status code 200).
+except requests.RequestException as e:  # Catch any request-related exceptions.
+    sys.exit(f"Error: Failed to fetch data from CoinDesk API. {e}")  # Exit with an error message.
+
+# Parse the JSON response to extract the current Bitcoin price.
+try:
+    data = response.json()  # Parse the JSON data from the response.
+    # Navigate through the nested JSON to get the current price in USD.
+    current_price = float(data["bpi"]["USD"]["rate_float"])
+except (KeyError, TypeError, ValueError) as e:  # Catch exceptions related to JSON parsing or missing data.
+    sys.exit(f"Error: Failed to parse the Bitcoin price from the response. {e}")  # Exit with an error message.

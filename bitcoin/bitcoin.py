@@ -38,3 +38,19 @@ try:
     current_price = float(data["bpi"]["USD"]["rate_float"])
 except (KeyError, TypeError, ValueError) as e:  # Catch exceptions related to JSON parsing or missing data.
     sys.exit(f"Error: Failed to parse the Bitcoin price from the response. {e}")  # Exit with an error message.
+
+
+# Perform the calculation to determine the total cost.
+try:
+    total_cost = number_of_bitcoins * current_price  # Calculate the total cost.
+except Exception as e:  # Catch any general exceptions that might occur during the calculation.
+    sys.exit(f"Error: An unexpected error occurred during the calculation. {e}")  # Exit with an error message.
+
+# Format the result to four decimal places with a thousands separator.
+try:
+    formatted_cost = f"${total_cost:,.4f}"  # Format the total cost to four decimal places and add thousands separators.
+except Exception as e:  # Catch any exceptions related to string formatting.
+    sys.exit(f"Error: An unexpected error occurred while formatting the output. {e}")  # Exit with an error message.
+
+# Output the formatted result to the user.
+print(formatted_cost)  # Display the formatted total cost.

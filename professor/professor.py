@@ -35,8 +35,21 @@ def get_level():
         print("Invalid input. Please enter 1, 2, or 3.")
 
 
+
 def generate_integer(level):
-    ...
+    """
+    Generate a random integer based on the difficulty level.
+    Level 1: 1-digit integer (0-9)
+    Level 2: 2-digit integer (10-99)
+    Level 3: 3-digit integer (100-999)
+    """
+    if level == 1:
+        return random.randint(0, 9)  # Generate a 1-digit integer
+    elif level == 2:
+        return random.randint(10, 99)  # Generate a 2-digit integer
+    elif level == 3:
+        return random.randint(100, 999)  # Generate a 3-digit integer
+
 
 
 if __name__ == "__main__":

@@ -21,3 +21,26 @@ while True:
         break
 
 # At this point, the list 'names' contains all the user-entered names
+
+# Initialize the farewell message with "Adieu, adieu, to "
+farewell_message = "Adieu, adieu, to "
+
+# Handle the different cases based on the number of names
+
+if len(names) == 1:
+    # If there is only one name, append it directly to the farewell message
+    farewell_message += names[0]
+
+elif len(names) == 2:
+    # If there are two names, join them with " and "
+    farewell_message += names[0] + " and " + names[1]
+
+else:
+    # If there are three or more names
+    # Join all names except the last one with ", "
+    farewell_message += ", ".join(names[:-1])
+    # Add " and " followed by the last name
+    farewell_message += ", and " + names[-1]
+
+# Print the final farewell message
+print(farewell_message)

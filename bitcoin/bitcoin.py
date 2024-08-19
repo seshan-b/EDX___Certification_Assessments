@@ -3,4 +3,6 @@
 # If that argument cannot be converted to a float, the program should exit via sys.exit with an error message.
 # Queries the API for the CoinDesk Bitcoin Price Index at https://api.coindesk.com/v1/bpi/currentprice.json,
 # Returns a JSON object, among whose nested keys is the current price
-# Bitcoin as a float Be sure to catch any exceptions
+# Bitcoin as a float Catch any exceptions
+# Catch the exceptions in a try statement
+# Outputs the current cost of Bitcoins in USD to four decimal places, using as a thousands separator.

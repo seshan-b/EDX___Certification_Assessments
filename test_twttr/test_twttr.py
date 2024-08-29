@@ -37,5 +37,5 @@ if __name__ == "__main__":
     test_mixed_case_vowel_removal()
     test_number_handling()
     test_no_vowels()
-    #test_punctuation_handling()
+    test_punctuation_handling()
     print("All tests passed!")

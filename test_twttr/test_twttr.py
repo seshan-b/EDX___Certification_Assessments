@@ -23,4 +23,7 @@ assert shorten("TwItTeR") == "TwtTR"
 # Punctuation
 assert shorten("Twi,tter!") == "Twttr!"
 
-print("All tests passed!")
+# Test case
+print(shorten("Twi,tter!"))  # Expected output: "Twttr!"
+
+

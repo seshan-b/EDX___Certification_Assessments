@@ -1,6 +1,8 @@
 def shorten(word):
     vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'}
     result_string = "".join([char for char in word if char not in vowels])
+    print(f"Original word: {word}")
+    print(f"Result string: {result_string}")
     return result_string
 
 def main():

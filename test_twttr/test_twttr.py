@@ -1,23 +1,26 @@
-import pytest
 from twttr import shorten
 
-def test_vowel_replacement():
-    assert shorten("Twitter") == "Twttr"
+# Test cases
 
-def test_capitalized_vowel_replacement():
-    assert shorten("TWITTER") == "TWTTR"
+# Vowel replacement
+assert shorten("Twitter") == "Twttr"
 
-def test_lowercase_vowel_replacement():
-    assert shorten("twitter") == "twttr"
+# Capitalized vowel replacement
+assert shorten("TWITTER") == "TWTTR"
 
-def test_omit_numbers():
-    assert shorten("T3st1ng123") == "T3st1ng123"
+# Lowercase vowel replacement
+assert shorten("twitter") == "twttr"
 
-def test_no_vowels():
-    assert shorten("TWTTR") == "TWTTR"
+# Omitting numbers
+assert shorten("T3st1ng123") == "T3st1ng123"
 
-def test_mixed_case():
-    assert shorten("TwItTeR") == "TwtTR"
+# No vowels to remove
+assert shorten("TWTTR") == "TWTTR"
 
-def test_punctuation():
-    assert shorten("Twi,tter!") == "Twttr!"
+# Mixed case
+assert shorten("TwItTeR") == "TwtTR"
+
+# Punctuation
+assert shorten("Twi,tter!") == "Twttr!"
+
+print("All tests passed!")

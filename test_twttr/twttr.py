@@ -4,9 +4,7 @@ def main():
     print(result_string)
 
 def shorten(word):
-    # Set of vowels to remove
     vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'}
-    # Use a list comprehension to filter out vowels
     result_string = "".join([char for char in word if char not in vowels])
     return result_string
 

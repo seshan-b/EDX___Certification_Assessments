@@ -20,7 +20,7 @@ def test_no_vowels():
     assert shorten("TWTTR") == "TWTTR", "String with no vowels should remain unchanged"
 
 def test_punctuation_handling():
-    assert shorten("Twi,tter!") == "Twttr!", "Failed to handle punctuation in 'Twi,tter!'"
+    assert shorten("Twi,tter!") == "Tw,ttr!", "Failed to handle punctuation in 'Twi,tter!'"
 
 if __name__ == "__main__":
     pytest.main()

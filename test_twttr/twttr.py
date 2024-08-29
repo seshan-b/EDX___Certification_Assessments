@@ -5,8 +5,7 @@ def main():
 
 def shorten(word):
     vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'}
-    # Incorrectly remove non-vowel characters
-    result_string = "".join([char for char in word if char in vowels])  # This should fail most tests
+    result_string = "".join([char for char in word if char not in vowels])
     return result_string
 
 if __name__ == "__main__":

@@ -4,10 +4,10 @@ def main():
     print(result_string)
 
 def shorten(word):
+    # Set of vowels to remove
     vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'}
-    print(f"Original word: {word}")  # Debug print
+    # Use a list comprehension to filter out vowels
     result_string = "".join([char for char in word if char not in vowels])
-    print(f"Result string: {result_string}")  # Debug print
     return result_string
 
 if __name__ == "__main__":

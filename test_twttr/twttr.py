@@ -4,8 +4,8 @@ def main():
     print(result_string)
 
 def shorten(word):
-    vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'}
-    result_string = "".join([char for char in word if char not in vowels])
+    # Incorrectly skip removing vowels
+    return word  # This should fail all the vowel removal tests
     return result_string
 
 if __name__ == "__main__":

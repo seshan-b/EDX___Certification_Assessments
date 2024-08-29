@@ -1,5 +1,7 @@
 from twttr import shorten
 
+# Test cases
+
 # Vowel replacement
 assert shorten("Twitter") == "Twttr"
 

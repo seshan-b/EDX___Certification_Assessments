@@ -5,10 +5,7 @@ def main():
 
 def shorten(word):
     vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'}
-    result_string = ""
-    for char in word:
-        if char not in vowels:
-            result_string += char
+    result_string = "".join([char for char in word if char not in vowels])
     return result_string
 
 if __name__ == "__main__":

@@ -27,8 +27,11 @@ def test_no_vowels():
     assert shorten("TWTTR") == "TWTTR", "String with no vowels should remain unchanged"
 
 # Punctuation handling
-# def test_punctuation_handling():
-#     assert shorten("Twi,tter!") == "Twttr!", "Failed to handle punctuation in 'Twi,tter!'"
+def test_punctuation_handling():
+    result = shorten("Twi,tter!")
+    print(f"Result: {result}")
+    assert result == "Twttr!", f"Failed to handle punctuation in 'Twi,tter!', got {result}"
+
 
 if __name__ == "__main__":
     test_basic_vowel_removal()
@@ -37,5 +40,5 @@ if __name__ == "__main__":
     test_mixed_case_vowel_removal()
     test_number_handling()
     test_no_vowels()
-    # test_punctuation_handling()
+    test_punctuation_handling()
     print("All tests passed!")

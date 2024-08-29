@@ -28,10 +28,7 @@ def test_no_vowels():
 
 # Punctuation handling
 def test_punctuation_handling():
-    result = shorten("Twi,tter!")
-    print(f"Result: {result}")
-    assert result == "Twttr!", f"Failed to handle punctuation in 'Twi,tter!', got {result}"
-
+    assert shorten("Twi,tter!") == "Twttr!", "Failed to handle punctuation in 'Twi,tter!'"
 
 if __name__ == "__main__":
     test_basic_vowel_removal()

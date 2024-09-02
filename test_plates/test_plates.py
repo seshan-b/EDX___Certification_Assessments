@@ -5,6 +5,7 @@ def test_valid_plates():
     assert is_valid("AB123") == True
     assert is_valid("CS50") == True
     assert is_valid("HELLO") == True
+    assert is_valid("AB") == True
 
 def test_plate_without_alphabetical_start():
     assert is_valid("123ABC") == False  # Plate does not start with two alphabetic characters

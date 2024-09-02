@@ -1,12 +1,12 @@
 def value(greeting):
-    processed_greeting = greeting.strip().lower()
+    processed_greeting = greeting.lower()
 
     if processed_greeting.startswith("hello"):
-        return "$0"
+        return 0
     elif processed_greeting.startswith("h"):
-        return "$20"
+        return 20
     else:
-        return "$100"
+        return 100
 
 
 def main():

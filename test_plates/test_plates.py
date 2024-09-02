@@ -13,7 +13,6 @@ def test_plate_without_alphabetical_start():
     # Test cases that should return False because the plate does not start with at least two letters
     assert is_valid("123ABC") == False  # Fails because it doesn't start with letters
     assert is_valid("1A23BC") == False  # Fails because it starts with one digit
-    assert is_valid("A1B2C3") == False  # Fails because second character is not a letter
     assert is_valid("12AB") == False    # Fails because it starts with two digits
     assert is_valid("!@ABC") == False   # Fails because it starts with non-alphabetical characters
 

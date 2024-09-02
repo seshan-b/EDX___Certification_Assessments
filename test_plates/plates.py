@@ -47,15 +47,29 @@ def main():
         print("Invalid")
 
 def is_valid(s):
-    if len(s) <= 6 and len(s) >= 2 and s[0:2].isalpha() and s.isalnum():
-        for i in s:
-            if i.isdigit():
-                result = s.index(i)
-                if s[result:].isdigit() and int(i) != 0:
-                    return True
-                else:
-                    return False
-        return True
+    # Check if the length is between 2 and 6 characters
+    if not 2 <= len(s) <= 6:
+        return False
+
+    # Check if the plate starts with at least two letters
+    if not s[:2].isalpha():
+        return False
+
+    # Check if the plate contains only alphanumeric characters
+    if not s.isalnum():
+        return False
+
+    # Check the positioning of numbers
+    for i, char in enumerate(s):
+        if char.isdigit():
+            index = s.index(char)
+            if s[index:].isdigit() and int(char) != 0:
+                return True
+            else:
+                return False
+
+    # If no numbers or other issues, return True if the plate is valid
+    return True
 
 if __name__ == "__main__":
     main()

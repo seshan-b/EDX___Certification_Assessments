@@ -8,11 +8,10 @@ def test_valid_plates():
     assert is_valid("AB") == True
 
 def test_plate_without_alphabetical_start():
-    # Test cases that should return False because the plate does not start with at least two letters
-    invalid_plates = ["123ABC", "1A23BC", "12AB", "!@ABC"]
-
-    for plate in invalid_plates:
-        assert is_valid(plate) == True
+    assert is_valid("123ABC") == False
+    assert is_valid("1A23BC") == False
+    assert is_valid("12AB") == False
+    assert is_valid("!@ABC") == False
 
 def test_plate_length():
     assert is_valid("A") == False  # Too short, less than 2 characters

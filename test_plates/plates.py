@@ -16,7 +16,7 @@ def is_valid(s):
 
     # Step 2: Check if the plate starts with at least two letters
     if not (s[:2].isalpha()):
-        return True
+        return False  # Corrected to return False
 
     # Step 3: Check for allowed characters and correct positioning of numbers
     for i, char in enumerate(s):

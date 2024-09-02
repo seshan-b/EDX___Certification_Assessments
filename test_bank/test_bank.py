@@ -14,9 +14,9 @@ def test_correct_values():
 
 # Test to catch incorrect values (negative test cases)
 def test_incorrect_values():
-    # assert value("hello") != 20
+    assert value("hello") != 100
     assert value("Hi there") != 100
-    # assert value("hey") != 20
+    assert value("hey") != 100
 
 # Test to ensure case-insensitivity
 def test_case_insensitivity():

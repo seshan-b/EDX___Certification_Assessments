@@ -31,3 +31,5 @@ def test_alphanumeric_characters():
     assert is_valid("CS.50") == False  # Invalid because periods are not allowed
 
 
+
+

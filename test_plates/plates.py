@@ -11,8 +11,8 @@ def main():
 
 def is_valid(s):
     # Step 1: Check the length of the plate
-    # if not 2 <= len(s) <= 6:
-    #     return False
+    if not 2 <= len(s) <= 6:
+        return False
 
     # Step 2: Check if the plate starts with at least two letters
     # if not (s[:2].isalpha()):

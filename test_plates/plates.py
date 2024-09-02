@@ -16,23 +16,23 @@ def is_valid(s):
 
     # Step 2: Check if the plate starts with at least two letters
     if not s[:2].isalpha():
-        return False  # This ensures the plate must start with two alphabetic characters
+        return False
 
     # Step 3: Check for allowed characters and correct positioning of numbers
+    number_started = False  # Flag to check when numbers start
     for i, char in enumerate(s):
         if char.isdigit():
-            # If the first number is '0', it's invalid
-            if char == '0' and i == 2:
+            if char == '0' and not number_started and i > 1:
                 return False
-            # Ensure all characters after the first number are also numbers
-            if not s[i:].isdigit():
-                return False
-            break
-        elif not char.isalpha():
-            return False
+            number_started = True  # Once a digit is found, set this flag
+        elif char.isalpha():
+            if number_started:
+                return False  # If a letter comes after numbers have started, it's invalid
+        else:
+            return False  # Any non-alphabetic and non-digit character makes the plate invalid
 
-    # If all checks are passed, return True
     return True
+
 
 
 if __name__ == "__main__":

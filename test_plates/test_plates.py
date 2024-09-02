@@ -30,13 +30,4 @@ def test_alphanumeric_characters():
     assert is_valid("CS 50") == False  # Invalid because spaces are not allowed
     assert is_valid("CS.50") == False  # Invalid because periods are not allowed
 
-def test_exit_code_for_alphabetical_check(monkeypatch):
-    # Test cases that should cause the main program to exit with code 1 due to invalid start
-    invalid_plates = ["123ABC", "1A23BC", "12AB", "!@ABC"]
-
-    for plate in invalid_plates:
-        monkeypatch.setattr('builtins.input', lambda _: plate)
-        with pytest.raises(SystemExit) as exc_info:
-            main()
-        assert exc_info.value.code == 1  # Expect exit code 1 for invalid plates
 

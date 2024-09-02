@@ -12,7 +12,7 @@ def test_plate_without_alphabetical_start():
     assert is_valid("1A23BC") == False  # Plate starts with a digit instead of two letters
     assert is_valid("12AB") == False    # Plate starts with two digits
     assert is_valid("!@ABC") == False   # Plate starts with non-alphabetic characters
-    assert is_valid(" ") == False   # Plate starts with non-alphabetic characters
+    assert is_valid(" AB1C") == False   # Plate starts with non-alphabetic characters
 
 def test_plate_length():
     assert is_valid("A") == False  # Too short, less than 2 characters

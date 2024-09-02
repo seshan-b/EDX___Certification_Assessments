@@ -7,15 +7,11 @@ def test_valid_plates():
     assert is_valid("HELLO") == True
     assert is_valid("AB") == True
 
-# def test_plate_without_alphabetical_start():
-#     with pytest.raises(ValueError, match="Plate must start with at least two alphabetic characters."):
-#         is_valid("123ABC")
-#     with pytest.raises(ValueError, match="Plate must start with at least two alphabetic characters."):
-#         is_valid("1A23BC")
-#     with pytest.raises(ValueError, match="Plate must start with at least two alphabetic characters."):
-#         is_valid("12AB")
-#     with pytest.raises(ValueError, match="Plate must start with at least two alphabetic characters."):
-#         is_valid("!@ABC")
+def test_plate_without_alphabetical_start():
+    assert is_valid("123ABC") == False  # Plate does not start with two alphabetic characters
+    assert is_valid("1A23BC") == False  # Plate starts with a digit instead of two letters
+    assert is_valid("12AB") == False    # Plate starts with two digits
+    assert is_valid("!@ABC") == False   # Plate starts with non-alphabetic characters
 
 def test_plate_length():
     assert is_valid("A") == False  # Too short, less than 2 characters

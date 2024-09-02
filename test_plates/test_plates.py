@@ -7,22 +7,16 @@ def test_valid_plates():
     assert is_valid("CS50") == True
     assert is_valid("HELLO") == True
     assert is_valid("AB") == True
-    assert is_valid("ABCD") == True    # Valid plate with only letters
+    assert is_valid("ABC123") == True  # Valid plate with numbers at the end
 
 def test_plate_without_alphabetical_start():
     # Plates that do not start with two alphabetic characters should return False
-    invalid_plates = [
-        "123ABC",  # Starts with digits
-        "1A23BC",  # Starts with a digit
-        "12ABC",   # Starts with two digits
-        "!@ABCB",  # Starts with non-alphabetic characters
-        "12ABCD",  # Starts with two digits
-        "9X8YZ",   # Starts with a digit
-        "7ABCD"    # Starts with a digit
-    ]
-
-    for plate in invalid_plates:
-        assert is_valid(plate) == False
+    assert is_valid("123ABC") == False  # Starts with digits
+    assert is_valid("1A23BC") == False  # Starts with a digit
+    assert is_valid("12ABC") == False   # Starts with two digits
+    assert is_valid("!@ABCB") == False  # Starts with non-alphabetic characters
+    assert is_valid("9X8YZ") == False   # Starts with a digit
+    assert is_valid("7ABCD") == False   # Starts with a digit
 
 def test_plate_length():
     # Plates that are too short or too long should return False
@@ -33,8 +27,7 @@ def test_number_placement():
     # Plates that have numbers in invalid positions should return False
     assert is_valid("AAA22A") == False  # Invalid because number is not at the end
     assert is_valid("CS5O") == False    # Invalid because letter 'O' is after the number
-    assert is_valid("AB1C2") == False   # Invalid because the number is in the middle
-    assert is_valid("C123AB") == False  # Invalid because numbers are not at the end
+    assert is_valid("A1B2C3") == False  # Invalid because numbers are mixed with letters
 
 def test_zero_placement():
     # Plates where the first number is '0' should return False

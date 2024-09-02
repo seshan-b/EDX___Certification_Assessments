@@ -7,22 +7,15 @@ def test_valid_plates():
     assert is_valid("HELLO") == True
     assert is_valid("AB") == True
 
-def test_plate_without_alphabetical_start(monkeypatch):
-    # assert is_valid("123ABC") == False  # Plate does not start with two alphabetic characters
-    # assert is_valid("1A23BC") == False  # Plate starts with a digit instead of two letters
-    # assert is_valid("12AB") == False    # Plate starts with two digits
-    # assert is_valid("!@ABC") == False   # Plate starts with non-alphabetic characters
-    # assert is_valid("12ABCD") == False  # Plate starts with two digits
-    # assert is_valid("9X8YZ") == False   # Plate starts with a digit
-    # assert is_valid("7ABCD") == False   # Plate starts with a digit
+def test_plate_without_alphabetical_start():
+    assert is_valid("123ABC") == False  # Plate does not start with two alphabetic characters
+    assert is_valid("1A23BC") == False  # Plate starts with a digit instead of two letters
+    assert is_valid("12AB") == False    # Plate starts with two digits
+    assert is_valid("!@ABC") == False   # Plate starts with non-alphabetic characters
+    assert is_valid("12ABCD") == False  # Plate starts with two digits
+    assert is_valid("9X8YZ") == False   # Plate starts with a digit
+    assert is_valid("7ABCD") == False   # Plate starts with a digit
 
-    invalid_plates = ["123ABC", "1A23BC", "12ABCD", "9X8YZ", "7ABCD"]
-
-    for plate in invalid_plates:
-        monkeypatch.setattr('builtins.input', lambda _: plate)
-        with pytest.raises(SystemExit) as exc_info:
-            main()
-        assert exc_info.value.code == 1  # Expect exit code 1 for invalid plates
 
 
 def test_plate_length():

@@ -2,10 +2,12 @@ def main():
     # Prompt the user for input
     plate = input("Enter the vanity plate: ")
     # Check if the plate is valid
-    result = is_valid(plate)
-    # Print the result
-    print("Valid" if result else "Invalid")
-
+    try:
+        result = is_valid(plate)
+        # Print the result
+        print("Valid" if result else "Invalid")
+    except ValueError as e:
+        print(f"Error: {e}")
 
 def is_valid(s):
     # Step 1: Check the length of the plate
@@ -14,7 +16,7 @@ def is_valid(s):
 
     # Step 2: Check if the plate starts with at least two letters
     if not (s[:2].isalpha()):
-        return False
+        raise ValueError("Plate must start with at least two alphabetic characters.")
 
     # Step 3: Check for allowed characters and correct positioning of numbers
     for i, char in enumerate(s):

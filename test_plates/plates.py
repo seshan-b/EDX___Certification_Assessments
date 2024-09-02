@@ -10,15 +10,15 @@ def main():
         print(f"Error: {e}")
 
 def is_valid(s):
-    # Step 1: Check the length of the plate
+    # Check the length of the plate
     if not 2 <= len(s) <= 6:
         return False
 
-    # Step 2: Check if the plate starts with at least two letters
+    # Check if the plate starts with at least two letters
     if not s[:2].isalpha():
         return False
 
-    # Step 3: Check for allowed characters and correct positioning of numbers
+    # Check for allowed characters and correct positioning of numbers
     number_started = False  # Flag to check when numbers start
     for i, char in enumerate(s):
         if char.isdigit():

@@ -8,10 +8,14 @@ def test_valid_plates():
     assert is_valid("AB") == True
 
 def test_plate_without_alphabetical_start():
-    assert is_valid("123ABC") == False
-    assert is_valid("1A23BC") == False
-    assert is_valid("12AB") == False
-    assert is_valid("!@ABC") == False
+    with pytest.raises(ValueError, match="Plate must start with at least two alphabetic characters."):
+        is_valid("123ABC")
+    with pytest.raises(ValueError, match="Plate must start with at least two alphabetic characters."):
+        is_valid("1A23BC")
+    with pytest.raises(ValueError, match="Plate must start with at least two alphabetic characters."):
+        is_valid("12AB")
+    with pytest.raises(ValueError, match="Plate must start with at least two alphabetic characters."):
+        is_valid("!@ABC")
 
 def test_plate_length():
     assert is_valid("A") == False  # Too short, less than 2 characters
@@ -28,9 +32,6 @@ def test_alphanumeric_characters():
     assert is_valid("AB@CDE") == False  # Invalid because '@' is not allowed
     assert is_valid("CS 50") == False  # Invalid because spaces are not allowed
     assert is_valid("CS.50") == False  # Invalid because periods are not allowed
-
-
-
 
 if __name__ == "__main__":
     pytest.main()

@@ -33,3 +33,5 @@ def test_alphanumeric_characters():
 
 
 
+if __name__ == "__main__":
+    pytest.main()
